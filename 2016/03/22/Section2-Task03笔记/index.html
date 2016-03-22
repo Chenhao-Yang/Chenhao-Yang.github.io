@@ -39,22 +39,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="任务一，实现一个简单html页面。就当做巩固html，css基础知识的机会。实际写的过程中不熟悉的地方查查搜索引擎，然后重新整理归纳如下，作为笔记。
-表格简单 3 * 3 行，首行为表头的表格实现
-123456789101112131415&amp;lt;table&amp;gt;    &amp;lt;thead&amp;gt;        &amp;lt;th&amp;gt;表头&amp;lt;/th&amp;gt;        &amp;lt;th&amp;gt;表">
+<meta name="description" content="任务三目标是完成一个三栏式布局。
+任务目标
+掌握HTML/CSS布局的概念
+掌握盒模型的概念
+掌握position与float的概念以及在布局时的用法
+
+清除浮动的方法123.cleafix &amp;#123;    overflow: auto;&amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Section1_Task01笔记">
-<meta property="og:url" content="http://yoursite.com/2016/03/15/Section1-Task01笔记/index.html">
+<meta property="og:title" content="Section2_Task03笔记">
+<meta property="og:url" content="http://yoursite.com/2016/03/22/Section2-Task03笔记/index.html">
 <meta property="og:site_name" content="Simplify">
-<meta property="og:description" content="任务一，实现一个简单html页面。就当做巩固html，css基础知识的机会。实际写的过程中不熟悉的地方查查搜索引擎，然后重新整理归纳如下，作为笔记。
-表格简单 3 * 3 行，首行为表头的表格实现
-123456789101112131415&amp;lt;table&amp;gt;    &amp;lt;thead&amp;gt;        &amp;lt;th&amp;gt;表头&amp;lt;/th&amp;gt;        &amp;lt;th&amp;gt;表">
-<meta property="og:updated_time" content="2016-03-21T02:51:08.750Z">
+<meta property="og:description" content="任务三目标是完成一个三栏式布局。
+任务目标
+掌握HTML/CSS布局的概念
+掌握盒模型的概念
+掌握position与float的概念以及在布局时的用法
+
+清除浮动的方法123.cleafix &amp;#123;    overflow: auto;&amp;#125;">
+<meta property="og:updated_time" content="2016-03-22T11:31:07.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Section1_Task01笔记">
-<meta name="twitter:description" content="任务一，实现一个简单html页面。就当做巩固html，css基础知识的机会。实际写的过程中不熟悉的地方查查搜索引擎，然后重新整理归纳如下，作为笔记。
-表格简单 3 * 3 行，首行为表头的表格实现
-123456789101112131415&amp;lt;table&amp;gt;    &amp;lt;thead&amp;gt;        &amp;lt;th&amp;gt;表头&amp;lt;/th&amp;gt;        &amp;lt;th&amp;gt;表">
+<meta name="twitter:title" content="Section2_Task03笔记">
+<meta name="twitter:description" content="任务三目标是完成一个三栏式布局。
+任务目标
+掌握HTML/CSS布局的概念
+掌握盒模型的概念
+掌握position与float的概念以及在布局时的用法
+
+清除浮动的方法123.cleafix &amp;#123;    overflow: auto;&amp;#125;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -64,7 +76,7 @@
   };
 </script>
 
-  <title> Section1_Task01笔记 | Simplify </title>
+  <title> Section2_Task03笔记 | Simplify </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +183,7 @@
           
           
             
-              Section1_Task01笔记
+              Section2_Task03笔记
             
           
         </h1>
@@ -180,8 +192,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-03-15T16:43:25+08:00" content="2016-03-15">
-            2016-03-15
+          <time itemprop="dateCreated" datetime="2016-03-22T19:14:13+08:00" content="2016-03-22">
+            2016-03-22
           </time>
         </span>
 
@@ -214,25 +226,13 @@
       
 
       
-        <span itemprop="articleBody"><p>任务一，实现一个简单html页面。就当做巩固html，css基础知识的机会。实际写的过程中不熟悉的地方查查搜索引擎，然后重新整理归纳如下，作为笔记。</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>简单 3 * 3 行，首行为表头的表格实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">th</span>&gt;</span>表头<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">th</span>&gt;</span>表头<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">th</span>&gt;</span>表头<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>跨列单元格语法</p>
-<pre><code>&lt;td colspan=&quot;2&quot;&gt;一个跨两列单元格&lt;/td&gt;
-</code></pre><p>边框粗细设置</p>
-<pre><code>&lt;table border=&quot;1&quot;&gt;一个边框为1px的表格&lt;/tabel&gt;
-</code></pre><h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><h5 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h5><p>简单账号密码表单输入实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    账户:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"account"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line">    密码:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"password"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="单选按钮框"><a href="#单选按钮框" class="headerlink" title="单选按钮框"></a>单选按钮框</h5><p>性别单选按钮实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">性别:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"sex"</span> <span class="attribute">value</span>=<span class="value">"male"</span> /&gt;</span>男</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"sex"</span> <span class="attribute">value</span>=<span class="value">"female"</span> /&gt;</span>女</span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="简单下拉列表框"><a href="#简单下拉列表框" class="headerlink" title="简单下拉列表框"></a>简单下拉列表框</h5><p>选择城市下拉框实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    城市:</span><br><span class="line">    <span class="tag">&lt;<span class="title">select</span> <span class="attribute">name</span>=<span class="value">"city"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"beijing"</span>&gt;</span>北京<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"shanghai"</span>&gt;</span>上海<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"guangzhou"</span>&gt;</span>广州<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h5><p>选择爱好的简单复选框实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    爱好:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"art"</span> /&gt;</span>艺术</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"secience"</span> /&gt;</span>科学</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"sports"</span> /&gt;</span>体育</span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="多行输入框"><a href="#多行输入框" class="headerlink" title="多行输入框"></a>多行输入框</h5><p>简单的多行输入框实现(“2”,”10”分别表示输入框的大小的行数跟列数）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    请输入你的地址:</span><br><span class="line">    <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">rows</span>=<span class="value">"2"</span> <span class="attribute">cols</span>=<span class="value">"10"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h5><p>简单按钮实现(value的值为显示在按钮上的名字）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"my_button"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><p>任务三目标是完成一个三栏式布局。</p>
+<h6 id="任务目标"><a href="#任务目标" class="headerlink" title="任务目标"></a>任务目标</h6><ul>
+<li>掌握HTML/CSS布局的概念</li>
+<li>掌握盒模型的概念</li>
+<li>掌握position与float的概念以及在布局时的用法</li>
+</ul>
+<h6 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.cleafix</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -253,13 +253,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/21/Section2-Task02笔记/" rel="prev">Section2_Task02笔记</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/14/百度前端技术学院/" rel="next">百度前端技术学院</a>
+              <a href="/2016/03/21/Section2-Task02笔记/" rel="next">Section2_Task02笔记</a>
             
           </div>
         </div>
@@ -373,7 +371,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">1.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单"><span class="nav-number">2.</span> <span class="nav-text">表单</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文本输入框"><span class="nav-number">2.0.1.</span> <span class="nav-text">文本输入框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单选按钮框"><span class="nav-number">2.0.2.</span> <span class="nav-text">单选按钮框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单下拉列表框"><span class="nav-number">2.0.3.</span> <span class="nav-text">简单下拉列表框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复选框"><span class="nav-number">2.0.4.</span> <span class="nav-text">复选框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多行输入框"><span class="nav-number">2.0.5.</span> <span class="nav-text">多行输入框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#按钮"><span class="nav-number">2.0.6.</span> <span class="nav-text">按钮</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#任务目标"><span class="nav-number">1.</span> <span class="nav-text">任务目标</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#清除浮动的方法"><span class="nav-number">2.</span> <span class="nav-text">清除浮动的方法</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
