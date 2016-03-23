@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="html,学习笔记,百度前端学院," />
 
 
 
@@ -39,16 +39,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="一直想着能够部署一个个人域名的独立博客。最近为了翻墙购买了搬瓦工的VPS搭建了SS，就琢磨这能够更充分的利用这个VPS，想着在上面搭建一个个人博客站点。目前自学了python一段时间，同时初步了解了Flask框架。最初设想是基于centos 6 + Flask + bootstrap来搭建个人博客。然而苦于目前自己自学编程能力还有限，又想能够尽块将博客搭建起来，通过谷歌无意间了解到了hexo框架。">
+<meta name="description" content="任务五在任务二的基础上去进一步调整布局。在完成任务五的过程中学到的新的知识点如下。
+display属性block：此元素将显示为块级元素，此元素前后会带有换行符
+inline：此元素会被显示为内联元素，元素前后没有换行符
+inline-block：行内块元素，元素显示为块且元素前后没有换行符
+float相关知识巩固当一个元素position设置为float属性，此元会影响到它后面的一个元素。一般情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="To start">
-<meta property="og:url" content="http://yoursite.com/2015/10/04/To-start/index.html">
+<meta property="og:title" content="Section1_Task05笔记">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/Section1-Task05笔记/index.html">
 <meta property="og:site_name" content="Simplify">
-<meta property="og:description" content="一直想着能够部署一个个人域名的独立博客。最近为了翻墙购买了搬瓦工的VPS搭建了SS，就琢磨这能够更充分的利用这个VPS，想着在上面搭建一个个人博客站点。目前自学了python一段时间，同时初步了解了Flask框架。最初设想是基于centos 6 + Flask + bootstrap来搭建个人博客。然而苦于目前自己自学编程能力还有限，又想能够尽块将博客搭建起来，通过谷歌无意间了解到了hexo框架。">
-<meta property="og:updated_time" content="2016-03-16T05:20:43.882Z">
+<meta property="og:description" content="任务五在任务二的基础上去进一步调整布局。在完成任务五的过程中学到的新的知识点如下。
+display属性block：此元素将显示为块级元素，此元素前后会带有换行符
+inline：此元素会被显示为内联元素，元素前后没有换行符
+inline-block：行内块元素，元素显示为块且元素前后没有换行符
+float相关知识巩固当一个元素position设置为float属性，此元会影响到它后面的一个元素。一般情">
+<meta property="og:updated_time" content="2016-03-23T07:15:20.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="To start">
-<meta name="twitter:description" content="一直想着能够部署一个个人域名的独立博客。最近为了翻墙购买了搬瓦工的VPS搭建了SS，就琢磨这能够更充分的利用这个VPS，想着在上面搭建一个个人博客站点。目前自学了python一段时间，同时初步了解了Flask框架。最初设想是基于centos 6 + Flask + bootstrap来搭建个人博客。然而苦于目前自己自学编程能力还有限，又想能够尽块将博客搭建起来，通过谷歌无意间了解到了hexo框架。">
+<meta name="twitter:title" content="Section1_Task05笔记">
+<meta name="twitter:description" content="任务五在任务二的基础上去进一步调整布局。在完成任务五的过程中学到的新的知识点如下。
+display属性block：此元素将显示为块级元素，此元素前后会带有换行符
+inline：此元素会被显示为内联元素，元素前后没有换行符
+inline-block：行内块元素，元素显示为块且元素前后没有换行符
+float相关知识巩固当一个元素position设置为float属性，此元会影响到它后面的一个元素。一般情">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +70,7 @@
   };
 </script>
 
-  <title> To start | Simplify </title>
+  <title> Section1_Task05笔记 | Simplify </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +177,7 @@
           
           
             
-              To start
+              Section1_Task05笔记
             
           
         </h1>
@@ -174,8 +186,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-04T14:42:47+08:00" content="2015-10-04">
-            2015-10-04
+          <time itemprop="dateCreated" datetime="2016-03-23T15:13:38+08:00" content="2016-03-23">
+            2016-03-23
           </time>
         </span>
 
@@ -184,8 +196,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/生活与思考/" itemprop="url" rel="index">
-                  <span itemprop="name">生活与思考</span>
+                <a href="/categories/HTML与CSS/" itemprop="url" rel="index">
+                  <span itemprop="name">HTML与CSS</span>
                 </a>
               </span>
 
@@ -208,30 +220,37 @@
       
 
       
-        <span itemprop="articleBody"><p>一直想着能够部署一个个人域名的独立博客。最近为了翻墙购买了搬瓦工的VPS搭建了SS，就琢磨这能够更充分的利用这个VPS，想着在上面搭建一个个人博客站点。目前自学了python一段时间，同时初步了解了Flask框架。最初设想是基于centos 6 + Flask + bootstrap来搭建个人博客。然而苦于目前自己自学编程能力还有限，又想能够尽块将博客搭建起来，通过谷歌无意间了解到了hexo框架。历经坎坷后终于部署成功，写下了本篇博文。</p>
-<p>前段时间看完了《权利的游戏》第六季，刚刚翻自己的历史说说，看到了曾经贴的守夜人誓词，非常喜欢，也在这贴一下。</p>
-<h2 id="守夜人誓言"><a href="#守夜人誓言" class="headerlink" title="守夜人誓言"></a>守夜人誓言</h2><blockquote>
-<p>长夜将至，我从今开始守望，至死方休。我将不娶妻、不封地、不生子。我将不戴宝冠，不争荣宠。我将尽忠职守，生死於斯。我是黑暗中的利剑，长城中的守卫。我是抵御寒冷的烈燄，破晓时分的光线，唤醒死者的号角，守护王国的铁卫。我将生命与荣耀献给守夜人，今夜如此，夜夜皆然。</p>
-<p>“Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the darkness. I am the watcher on the walls. I am the fire that burns against the cold, the light that brings the dawn, the horn that wakes the sleepers, the shield that guards the realms of men. I pledge my life and honor to the Night’s Watch, for this night and all the nights to come.”</p>
-</blockquote>
+        <span itemprop="articleBody"><p>任务五在任务二的基础上去进一步调整布局。在完成任务五的过程中学到的新的知识点如下。</p>
+<h5 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h5><p>block：此元素将显示为块级元素，此元素前后会带有换行符</p>
+<p>inline：此元素会被显示为内联元素，元素前后没有换行符</p>
+<p>inline-block：行内块元素，元素显示为块且元素前后没有换行符</p>
+<h5 id="float相关知识巩固"><a href="#float相关知识巩固" class="headerlink" title="float相关知识巩固"></a>float相关知识巩固</h5><p>当一个元素position设置为float属性，此元会影响到它后面的一个元素。一般情况下需对后面的元素进行浮动清除。</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag">#html</a>
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+            <a href="/tags/百度前端学院/" rel="tag">#百度前端学院</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/14/百度前端技术学院/" rel="prev">百度前端技术学院</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/04/hello-world/" rel="next">Hello World</a>
+              <a href="/2016/03/23/Section1-Task04笔记/" rel="next">Section1_Task04笔记</a>
             
           </div>
         </div>
@@ -345,7 +364,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#守夜人誓言"><span class="nav-number">1.</span> <span class="nav-text">守夜人誓言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#display属性"><span class="nav-number">1.</span> <span class="nav-text">display属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#float相关知识巩固"><span class="nav-number">2.</span> <span class="nav-text">float相关知识巩固</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
