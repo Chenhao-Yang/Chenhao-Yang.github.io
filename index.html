@@ -166,6 +166,116 @@
           
           
             
+              <a class="post-title-link" href="/2016/04/14/Java入门笔记1-变量和常量/" itemprop="url">
+                (Java入门笔记1)变量和常量
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-04-14T13:43:31+08:00" content="2016-04-14">
+            2016-04-14
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Java/" itemprop="url" rel="index">
+                  <span itemprop="name">Java</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h5 id="Java-输出Hello-World"><a href="#Java-输出Hello-World" class="headerlink" title="Java 输出Hello World"></a>Java 输出Hello World</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Java-标识符"><a href="#Java-标识符" class="headerlink" title="Java 标识符"></a>Java 标识符</h5><p>Java标识符是给java程序中变量，类，方法等命名的符号。</p>
+<ul>
+<li>不能以数字开头，可以由字母、数字、下划线（_）、美元符（$）组成</li>
+<li>不能是Java中的关键字和保留字</li>
+<li>标识符严格区分大小写</li>
+</ul>
+<h5 id="Java中的变量"><a href="#Java中的变量" class="headerlink" title="Java中的变量"></a>Java中的变量</h5><p>Java是一门静态强类型语言，里面的变量初始化时必须指定<strong>变量类型</strong></p>
+<h5 id="Java中的数据类型"><a href="#Java中的数据类型" class="headerlink" title="Java中的数据类型"></a>Java中的数据类型</h5><h6 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h6><ul>
+<li>数值型</li>
+<li>字符型</li>
+<li>布尔型</li>
+</ul>
+<h6 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h6><ul>
+<li>类</li>
+<li>接口</li>
+<li>数组</li>
+</ul>
+<h6 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h6><p>在Java中，<strong>基本数据类型变量存的是数据本身</strong>，而<strong>引用类型变量</strong>存的是<strong>保存数据的空间地址</strong>。</p>
+<h5 id="Java中的数据类型转换"><a href="#Java中的数据类型转换" class="headerlink" title="Java中的数据类型转换"></a>Java中的数据类型转换</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> score1=<span class="number">82</span>;</span><br><span class="line"><span class="keyword">double</span> score2=score1;</span><br><span class="line">System.out.println(score2);</span><br></pre></td></tr></table></figure>
+<p>代码中 int 型变量 score1 可以直接为 double 型变量 score2 完成赋值操作，运行结果为： 82.0 </p>
+<p>这就是<strong>自动类型转换</strong></p>
+<p>需要满足条件为</p>
+<ol>
+<li>目标类型与源类型兼容，如double型兼容int型，但是char型不能兼容int型</li>
+<li>目标类型大于源类型，如 double 类型长度为 8 字节， int 类型为 4 字节，因此 double 类型的变量里直接可以存放 int 类型的数据，但反过来就不可以了</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> avg=<span class="number">75.8</span>;</span><br><span class="line"><span class="keyword">int</span> avg2=(<span class="keyword">int</span>)avg1;</span><br><span class="line">System.out.println(avg1);</span><br><span class="line">System.out.println(avg2);</span><br></pre></td></tr></table></figure>
+<p>这就是<strong>强制类型转换</strong>，通过强制类型转换将 75.8 赋值给 int 型变量后，结果为 75，数值上并未进行四舍五入，而是直接将小数位截断。</p>
+<h5 id="Java常量的应用"><a href="#Java常量的应用" class="headerlink" title="Java常量的应用"></a>Java常量的应用</h5><p>常量是指一种特殊的变量，它的值被设定后，在程序的运行过程中不允许被改变。</p>
+<p>语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> String LOVE = <span class="string">"JAVA"</span>;</span><br></pre></td></tr></table></figure>
+<p>常量名一般用<strong>大写字符</strong></p>
+<h5 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h5><p>单行注释： //<br>多行注释： /<em> [代码块] </em>/<br>文档注释：/<em> </em> [代码块]  */</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/03/23/Section1-Task05笔记/" itemprop="url">
                 Section1_Task05笔记
               </a>
@@ -857,21 +967,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
