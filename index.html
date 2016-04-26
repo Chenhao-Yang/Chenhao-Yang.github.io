@@ -166,6 +166,96 @@
           
           
             
+              <a class="post-title-link" href="/2016/04/26/Requests模块基础用法/" itemprop="url">
+                Requests模块基础用法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-04-26T14:54:59+08:00" content="2016-04-26">
+            2016-04-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>最近几天在学习爬虫，想把拉钩网上面关于python的招聘信息全部爬下来方便<br>查看。先去github上面搜索了下其他人的代码，很多代码都用到了多线程模块，目前知识储备还不够，看的有些吃力。于是便准备自己写一个简单的爬虫当作练手。在写的过程中，学习了requests模块，重温了beautifulsoup模块的知识。</p>
+<p>Requests模块的基本用法</p>
+<h5 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h5><p>get请求</p>
+<pre><code>&gt;&gt;&gt; r = requests.get(url)
+</code></pre><p>Post请求</p>
+<pre><code>&gt;&gt;&gt; r = requests.post(url)
+</code></pre><h5 id="为url传递参数"><a href="#为url传递参数" class="headerlink" title="为url传递参数"></a>为url传递参数</h5><pre><code>&gt;&gt;&gt; payload = {&quot;key1&quot;: &quot;value1&quot;, &quot;key2&quot;: &quot;value2&quot;}
+&gt;&gt;&gt; r = request.get(url, params = payload)
+</code></pre><h5 id="读取相应内容"><a href="#读取相应内容" class="headerlink" title="读取相应内容"></a>读取相应内容</h5><pre><code>&gt;&gt;&gt; r = requests.get(url)
+&gt;&gt;&gt; r.text
+</code></pre><p>Requests会自动解码来自服务器的内容。大多数unicode字符集都能被无缝地解码。</p>
+<h5 id="定制请求头部"><a href="#定制请求头部" class="headerlink" title="定制请求头部"></a>定制请求头部</h5><pre><code>&gt;&gt;&gt; payload = {&apos;key1&apos;: &apos;value1&apos;, &apos;key2&apos;: &apos;value2&apos;}
+&gt;&gt;&gt; r = requests.post(&quot;http://httpbin.org/post&quot;, data=payload)
+&gt;&gt;&gt; print r.text
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/04/16/Java入门笔记3-用户输入与数组/" itemprop="url">
                 (Java入门笔记3)用户输入与数组
               </a>
@@ -994,89 +1084,6 @@ default:
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/14/百度前端技术学院/" itemprop="url">
-                百度前端技术学院
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-14T17:18:13+08:00" content="2016-03-14">
-            2016-03-14
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/生活与思考/" itemprop="url" rel="index">
-                  <span itemprop="name">生活与思考</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>前段时间跟几个网上认识的小伙伴组队报名了百度前段技术学院。这是一个由百度组织的面向在校大学生的前段技术培训课程，今天是课程正式开始的第一天。自从部署完这个博客之后好久都没有写过文章了，就从这篇博文开始吧，保持在博客上记笔记，总结知识的习惯。之前一直在零零散散的自学python基础知识，基本是朝着web方向去学习，但是都学的都比较缺乏系统性。刚好这次偶然机会了解到了百度办的这个活动，便果断报名了，也算是一次提高自己的好机会。</p>
-<ul>
-<li><a href="http://ife.baidu.com/" target="_blank" rel="external">百度前段技术学院主页</a></li>
-<li><a href="http://axuebin.com/webGroup" target="_blank" rel="external">我们的团队</a></li>
-</ul>
-<p>争取在接下来课程学习过程中所学习到的东西梳理成笔记，都记录在这个博客上。也算作是点滴的积累，记录。想想从进入大学之后基本就很少自己主动写东西了。从前读书的时候非常讨厌写作文，却又一直被动的不断被要求去写些东西，便自然而然的产生了抵触，同时导致也产生了惰性。这也是为什么我的博客搭建了这么久都基本没怎么动笔。</p>
-<p>是时候去进行一些改变了，多写点自己想写的东西总归是好的。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1115,7 +1122,7 @@ default:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1129,7 +1136,7 @@ default:
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
