@@ -166,6 +166,91 @@
           
           
             
+              <a class="post-title-link" href="/2016/04/28/利用Python将数据写入excel文件/" itemprop="url">
+                利用Python将数据写入excel文件
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-04-28T10:16:34+08:00" content="2016-04-28">
+            2016-04-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。</p>
+<h5 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h5><pre><code>import xlwt
+</code></pre><h5 id="新建一个excel文件"><a href="#新建一个excel文件" class="headerlink" title="新建一个excel文件"></a>新建一个excel文件</h5><pre><code>myfile = xlwt.Workbook()
+</code></pre><h5 id="新建一个sheet"><a href="#新建一个sheet" class="headerlink" title="新建一个sheet"></a>新建一个sheet</h5><pre><code>sheet = myfile.add_sheet(&quot;sheet1&quot;, cell_overwrite_ok=True)
+</code></pre><p>在myfile文件中新建一个叫”sheet1”的新sheet，后面的cell_overwrite_ok<br>参数表示允许覆盖写入。即sheet1当中加入已经存在内容，会覆盖原来的内容写入。</p>
+<h5 id="往sheet中写入内容"><a href="#往sheet中写入内容" class="headerlink" title="往sheet中写入内容"></a>往sheet中写入内容</h5><pre><code>sheet.write(0, 0, &quot;test&quot;)
+</code></pre><p>表示往第0行第0列写入“test”字符串</p>
+<h5 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h5><pre><code>myfile.save(&quot;filename.xls&quot;)
+</code></pre><p>最后一定记得关闭文件完成写入过程</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/04/26/Requests模块基础用法/" itemprop="url">
                 Requests模块基础用法
               </a>
@@ -212,7 +297,7 @@
 
       
         
-          <span itemprop="articleBody"><p>最近几天在学习爬虫，想把拉钩网上面关于python的招聘信息全部爬下来方便<br>查看。先去github上面搜索了下其他人的代码，很多代码都用到了多线程模块，目前知识储备还不够，看的有些吃力。于是便准备自己写一个简单的爬虫当作练手。在写的过程中，学习了requests模块，重温了beautifulsoup模块的知识。</p>
+          <span itemprop="articleBody"><p>最近几天在学习爬虫，想把拉钩网上面关于python的招聘信息全部爬下来方便查看。先去github上面搜索了下其他人的代码，很多代码都用到了多线程模块，目前知识储备还不够，看的有些吃力。于是便准备自己写一个简单的爬虫当作练手。在写的过程中，学习了requests模块，重温了beautifulsoup模块的知识。</p>
 <p>Requests模块的基本用法</p>
 <h5 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h5><p>get请求</p>
 <pre><code>&gt;&gt;&gt; r = requests.get(url)
@@ -990,100 +1075,6 @@ default:
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/15/Section1-Task01笔记/" itemprop="url">
-                Section1_Task01笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-15T16:43:25+08:00" content="2016-03-15">
-            2016-03-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/HTML与CSS/" itemprop="url" rel="index">
-                  <span itemprop="name">HTML与CSS</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>任务一，实现一个简单html页面。就当做巩固html，css基础知识的机会。实际写的过程中不熟悉的地方查查搜索引擎，然后重新整理归纳如下，作为笔记。</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>简单 3 * 3 行，首行为表头的表格实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">th</span>&gt;</span>表头<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">th</span>&gt;</span>表头<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">th</span>&gt;</span>表头<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>一格<span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>跨列单元格语法</p>
-<pre><code>&lt;td colspan=&quot;2&quot;&gt;一个跨两列单元格&lt;/td&gt;
-</code></pre><p>边框粗细设置</p>
-<pre><code>&lt;table border=&quot;1&quot;&gt;一个边框为1px的表格&lt;/tabel&gt;
-</code></pre><h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><h5 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h5><p>简单账号密码表单输入实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    账户:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"account"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line">    密码:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"password"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="单选按钮框"><a href="#单选按钮框" class="headerlink" title="单选按钮框"></a>单选按钮框</h5><p>性别单选按钮实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">性别:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"sex"</span> <span class="attribute">value</span>=<span class="value">"male"</span> /&gt;</span>男</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"sex"</span> <span class="attribute">value</span>=<span class="value">"female"</span> /&gt;</span>女</span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="简单下拉列表框"><a href="#简单下拉列表框" class="headerlink" title="简单下拉列表框"></a>简单下拉列表框</h5><p>选择城市下拉框实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    城市:</span><br><span class="line">    <span class="tag">&lt;<span class="title">select</span> <span class="attribute">name</span>=<span class="value">"city"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"beijing"</span>&gt;</span>北京<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"shanghai"</span>&gt;</span>上海<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"guangzhou"</span>&gt;</span>广州<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h5><p>选择爱好的简单复选框实现</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    爱好:</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"art"</span> /&gt;</span>艺术</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"secience"</span> /&gt;</span>科学</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"sports"</span> /&gt;</span>体育</span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="多行输入框"><a href="#多行输入框" class="headerlink" title="多行输入框"></a>多行输入框</h5><p>简单的多行输入框实现(“2”,”10”分别表示输入框的大小的行数跟列数）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    请输入你的地址:</span><br><span class="line">    <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">rows</span>=<span class="value">"2"</span> <span class="attribute">cols</span>=<span class="value">"10"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h5><p>简单按钮实现(value的值为显示在按钮上的名字）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"my_button"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1122,7 +1113,7 @@ default:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

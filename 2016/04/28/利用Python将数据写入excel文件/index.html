@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Python,学习笔记,爬虫," />
 
 
 
@@ -39,16 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前段时间跟几个网上认识的小伙伴组队报名了百度前段技术学院。这是一个由百度组织的面向在校大学生的前段技术培训课程，今天是课程正式开始的第一天。自从部署完这个博客之后好久都没有写过文章了，就从这篇博文开始吧，保持在博客上记笔记，总结知识的习惯。之前一直在零零散散的自学python基础知识，基本是朝着web方向去学习，但是都学的都比较缺乏系统性。刚好这次偶然机会了解到了百度办的这个活动，便果断报名了，也">
+<meta name="description" content="最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。
+导入模块import xlwt
+新建一个excel文件myfile = xlwt.Workbook()
+新建一个sheetsheet = myfile.add_sheet(&amp;quot;sheet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="百度前端技术学院">
-<meta property="og:url" content="http://yoursite.com/2016/03/14/百度前端技术学院/index.html">
+<meta property="og:title" content="利用Python将数据写入excel文件">
+<meta property="og:url" content="http://yoursite.com/2016/04/28/利用Python将数据写入excel文件/index.html">
 <meta property="og:site_name" content="Simplify">
-<meta property="og:description" content="前段时间跟几个网上认识的小伙伴组队报名了百度前段技术学院。这是一个由百度组织的面向在校大学生的前段技术培训课程，今天是课程正式开始的第一天。自从部署完这个博客之后好久都没有写过文章了，就从这篇博文开始吧，保持在博客上记笔记，总结知识的习惯。之前一直在零零散散的自学python基础知识，基本是朝着web方向去学习，但是都学的都比较缺乏系统性。刚好这次偶然机会了解到了百度办的这个活动，便果断报名了，也">
-<meta property="og:updated_time" content="2016-03-17T05:56:42.337Z">
+<meta property="og:description" content="最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。
+导入模块import xlwt
+新建一个excel文件myfile = xlwt.Workbook()
+新建一个sheetsheet = myfile.add_sheet(&amp;quot;sheet">
+<meta property="og:updated_time" content="2016-04-28T02:18:21.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="百度前端技术学院">
-<meta name="twitter:description" content="前段时间跟几个网上认识的小伙伴组队报名了百度前段技术学院。这是一个由百度组织的面向在校大学生的前段技术培训课程，今天是课程正式开始的第一天。自从部署完这个博客之后好久都没有写过文章了，就从这篇博文开始吧，保持在博客上记笔记，总结知识的习惯。之前一直在零零散散的自学python基础知识，基本是朝着web方向去学习，但是都学的都比较缺乏系统性。刚好这次偶然机会了解到了百度办的这个活动，便果断报名了，也">
+<meta name="twitter:title" content="利用Python将数据写入excel文件">
+<meta name="twitter:description" content="最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。
+导入模块import xlwt
+新建一个excel文件myfile = xlwt.Workbook()
+新建一个sheetsheet = myfile.add_sheet(&amp;quot;sheet">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +67,7 @@
   };
 </script>
 
-  <title> 百度前端技术学院 | Simplify </title>
+  <title> 利用Python将数据写入excel文件 | Simplify </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +174,7 @@
           
           
             
-              百度前端技术学院
+              利用Python将数据写入excel文件
             
           
         </h1>
@@ -174,8 +183,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-03-14T17:18:13+08:00" content="2016-03-14">
-            2016-03-14
+          <time itemprop="dateCreated" datetime="2016-04-28T10:16:34+08:00" content="2016-04-28">
+            2016-04-28
           </time>
         </span>
 
@@ -184,8 +193,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/生活与思考/" itemprop="url" rel="index">
-                  <span itemprop="name">生活与思考</span>
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
                 </a>
               </span>
 
@@ -208,31 +217,41 @@
       
 
       
-        <span itemprop="articleBody"><p>前段时间跟几个网上认识的小伙伴组队报名了百度前段技术学院。这是一个由百度组织的面向在校大学生的前段技术培训课程，今天是课程正式开始的第一天。自从部署完这个博客之后好久都没有写过文章了，就从这篇博文开始吧，保持在博客上记笔记，总结知识的习惯。之前一直在零零散散的自学python基础知识，基本是朝着web方向去学习，但是都学的都比较缺乏系统性。刚好这次偶然机会了解到了百度办的这个活动，便果断报名了，也算是一次提高自己的好机会。</p>
-<ul>
-<li><a href="http://ife.baidu.com/" target="_blank" rel="external">百度前段技术学院主页</a></li>
-<li><a href="http://axuebin.com/webGroup" target="_blank" rel="external">我们的团队</a></li>
-</ul>
-<p>争取在接下来课程学习过程中所学习到的东西梳理成笔记，都记录在这个博客上。也算作是点滴的积累，记录。想想从进入大学之后基本就很少自己主动写东西了。从前读书的时候非常讨厌写作文，却又一直被动的不断被要求去写些东西，便自然而然的产生了抵触，同时导致也产生了惰性。这也是为什么我的博客搭建了这么久都基本没怎么动笔。</p>
-<p>是时候去进行一些改变了，多写点自己想写的东西总归是好的。</p>
+        <span itemprop="articleBody"><p>最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。</p>
+<h5 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h5><pre><code>import xlwt
+</code></pre><h5 id="新建一个excel文件"><a href="#新建一个excel文件" class="headerlink" title="新建一个excel文件"></a>新建一个excel文件</h5><pre><code>myfile = xlwt.Workbook()
+</code></pre><h5 id="新建一个sheet"><a href="#新建一个sheet" class="headerlink" title="新建一个sheet"></a>新建一个sheet</h5><pre><code>sheet = myfile.add_sheet(&quot;sheet1&quot;, cell_overwrite_ok=True)
+</code></pre><p>在myfile文件中新建一个叫”sheet1”的新sheet，后面的cell_overwrite_ok<br>参数表示允许覆盖写入。即sheet1当中加入已经存在内容，会覆盖原来的内容写入。</p>
+<h5 id="往sheet中写入内容"><a href="#往sheet中写入内容" class="headerlink" title="往sheet中写入内容"></a>往sheet中写入内容</h5><pre><code>sheet.write(0, 0, &quot;test&quot;)
+</code></pre><p>表示往第0行第0列写入“test”字符串</p>
+<h5 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h5><pre><code>myfile.save(&quot;filename.xls&quot;)
+</code></pre><p>最后一定记得关闭文件完成写入过程</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+            <a href="/tags/爬虫/" rel="tag">#爬虫</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/15/Section1-Task01笔记/" rel="prev">Section1_Task01笔记</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/04/To-start/" rel="next">To start</a>
+              <a href="/2016/04/26/Requests模块基础用法/" rel="next">Requests模块基础用法</a>
             
           </div>
         </div>
@@ -346,7 +365,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#导入模块"><span class="nav-number">1.</span> <span class="nav-text">导入模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建一个excel文件"><span class="nav-number">2.</span> <span class="nav-text">新建一个excel文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建一个sheet"><span class="nav-number">3.</span> <span class="nav-text">新建一个sheet</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#往sheet中写入内容"><span class="nav-number">4.</span> <span class="nav-text">往sheet中写入内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关闭文件"><span class="nav-number">5.</span> <span class="nav-text">关闭文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
