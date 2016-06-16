@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Java,学习笔记," />
+  <meta name="keywords" content="Python,学习笔记," />
 
 
 
@@ -39,16 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="接受用户输入123456789import java.uti.Scanner;public class Demo &amp;#123;	public static void main(String[] args) &amp;#123;		Scanner input = new Scanner(System.in); //创建Scanner对象		System.out.println(&quot;请输入：&quot;);		int n">
+<meta name="description" content="遍历字典123d = &amp;#123;&quot;x&quot;:1, &quot;y&quot;:2, &quot;z&quot;:3&amp;#125;for key, value in d.items():	print key, &quot;corresponds to &quot;, value
+并行迭代12345678names = [&quot;ych&quot;, &quot;cpp&quot;, &quot;ws&quot;]ages = [12, 14, 54]&amp;gt;&amp;gt;&amp;gt; zip(name, ages)[(&quot;ych">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(Java入门笔记3)用户输入与数组">
-<meta property="og:url" content="http://yoursite.com/2016/04/16/Java入门笔记3-用户输入与数组/index.html">
+<meta property="og:title" content="python基础教程笔记（1）">
+<meta property="og:url" content="http://yoursite.com/2016/06/16/python基础教程笔记（1）/index.html">
 <meta property="og:site_name" content="Simplify">
-<meta property="og:description" content="接受用户输入123456789import java.uti.Scanner;public class Demo &amp;#123;	public static void main(String[] args) &amp;#123;		Scanner input = new Scanner(System.in); //创建Scanner对象		System.out.println(&quot;请输入：&quot;);		int n">
-<meta property="og:updated_time" content="2016-04-16T07:04:09.801Z">
+<meta property="og:description" content="遍历字典123d = &amp;#123;&quot;x&quot;:1, &quot;y&quot;:2, &quot;z&quot;:3&amp;#125;for key, value in d.items():	print key, &quot;corresponds to &quot;, value
+并行迭代12345678names = [&quot;ych&quot;, &quot;cpp&quot;, &quot;ws&quot;]ages = [12, 14, 54]&amp;gt;&amp;gt;&amp;gt; zip(name, ages)[(&quot;ych">
+<meta property="og:updated_time" content="2016-06-16T09:42:06.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(Java入门笔记3)用户输入与数组">
-<meta name="twitter:description" content="接受用户输入123456789import java.uti.Scanner;public class Demo &amp;#123;	public static void main(String[] args) &amp;#123;		Scanner input = new Scanner(System.in); //创建Scanner对象		System.out.println(&quot;请输入：&quot;);		int n">
+<meta name="twitter:title" content="python基础教程笔记（1）">
+<meta name="twitter:description" content="遍历字典123d = &amp;#123;&quot;x&quot;:1, &quot;y&quot;:2, &quot;z&quot;:3&amp;#125;for key, value in d.items():	print key, &quot;corresponds to &quot;, value
+并行迭代12345678names = [&quot;ych&quot;, &quot;cpp&quot;, &quot;ws&quot;]ages = [12, 14, 54]&amp;gt;&amp;gt;&amp;gt; zip(name, ages)[(&quot;ych">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +61,7 @@
   };
 </script>
 
-  <title> (Java入门笔记3)用户输入与数组 | Simplify </title>
+  <title> python基础教程笔记（1） | Simplify </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +168,7 @@
           
           
             
-              (Java入门笔记3)用户输入与数组
+              python基础教程笔记（1）
             
           
         </h1>
@@ -174,8 +177,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-04-16T15:02:38+08:00" content="2016-04-16">
-            2016-04-16
+          <time itemprop="dateCreated" datetime="2016-06-16T17:40:13+08:00" content="2016-06-16">
+            2016-06-16
           </time>
         </span>
 
@@ -184,8 +187,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
                 </a>
               </span>
 
@@ -208,19 +211,9 @@
       
 
       
-        <span itemprop="articleBody"><h5 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.uti.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in); <span class="comment">//创建Scanner对象</span></span><br><span class="line">		System.out.println(<span class="string">"请输入："</span>);</span><br><span class="line">		<span class="keyword">int</span> num = input.nextInt(); <span class="comment">//获取用户输入的整数，并保存在num变量</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><p>Java 中数组操作需要四个步骤：</p>
-<p>1.声明数组</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] scores;  <span class="comment">//声明一个类型为整型的数组</span></span><br><span class="line"><span class="keyword">double</span> height[]; <span class="comment">//声明一个类型为浮点型的数组</span></span><br><span class="line">String[] name; <span class="comment">//声明一个类型为字符串的数组</span></span><br></pre></td></tr></table></figure>
-<p>2.分配空间</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scores = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]; <span class="comment">//长度为5的整数型数组</span></span><br></pre></td></tr></table></figure>
-<p>或者将两个步骤合并，在声明数组的同时为他们分配空间</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] scores = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
-<p>3.赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scores[<span class="number">0</span>] = <span class="number">89</span>;</span><br><span class="line">scores[<span class="number">1</span>] = <span class="number">79</span>;</span><br></pre></td></tr></table></figure>
-<p>通过下标直接访问</p>
-<p>直接将三步合并操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] scores = &#123;<span class="number">78</span>, <span class="number">91</span>, <span class="number">84</span>, <span class="number">68</span>&#125;;</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><h5 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"x"</span>:<span class="number">1</span>, <span class="string">"y"</span>:<span class="number">2</span>, <span class="string">"z"</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line">	<span class="keyword">print</span> key, <span class="string">"corresponds to "</span>, value</span><br></pre></td></tr></table></figure>
+<h5 id="并行迭代"><a href="#并行迭代" class="headerlink" title="并行迭代"></a>并行迭代</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">"ych"</span>, <span class="string">"cpp"</span>, <span class="string">"ws"</span>]</span><br><span class="line">ages = [<span class="number">12</span>, <span class="number">14</span>, <span class="number">54</span>]</span><br><span class="line"></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>zip(name, ages)</span><br><span class="line">[(<span class="string">"ych"</span>, <span class="number">12</span>	), (<span class="string">"cpp"</span>, <span class="number">14</span>), (<span class="string">"ws"</span>, <span class="number">54</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, age <span class="keyword">in</span> zip(names, ages):</span><br><span class="line">    <span class="keyword">print</span> name, <span class="string">"is"</span>, age, <span class="string">"years old"</span></span><br></pre></td></tr></table></figure>
+<h5 id="使用for循环同时迭代索引"><a href="#使用for循环同时迭代索引" class="headerlink" title="使用for循环同时迭代索引"></a>使用for循环同时迭代索引</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, item <span class="keyword">in</span> enumerate(some_list):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"index: "</span>, index, <span class="string">"item: "</span>, item</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -228,7 +221,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag">#Java</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
             <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
           
@@ -239,13 +232,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/26/Requests模块基础用法/" rel="prev">Requests模块基础用法</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/15/Flask框架笔记1-使用-property/" rel="next">(Flask框架学习笔记1)使用@property</a>
+              <a href="/2016/04/28/利用Python将数据写入excel文件/" rel="next">利用Python将数据写入excel文件</a>
             
           </div>
         </div>
@@ -359,7 +350,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#接受用户输入"><span class="nav-number">1.</span> <span class="nav-text">接受用户输入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#遍历字典"><span class="nav-number">1.</span> <span class="nav-text">遍历字典</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#并行迭代"><span class="nav-number">2.</span> <span class="nav-text">并行迭代</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用for循环同时迭代索引"><span class="nav-number">3.</span> <span class="nav-text">使用for循环同时迭代索引</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
