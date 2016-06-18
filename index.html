@@ -126,7 +126,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-next-about"></i> <br />
-            关于
+            关于我
           </a>
         </li>
       
@@ -162,6 +162,269 @@
       <div class="main-inner">
         <div id="content" class="content"> 
   <section id="posts" class="posts-expand">
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/06/18/判断B是否为A的子树/" itemprop="url">
+                判断B是否为A的子树
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-18T22:59:42+08:00" content="2016-06-18">
+            2016-06-18
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/18/判断B是否为A的子树/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/18/判断B是否为A的子树/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h5 id="判断二叉树B是否为二叉树A的子树"><a href="#判断二叉树B是否为二叉树A的子树" class="headerlink" title="判断二叉树B是否为二叉树A的子树"></a>判断二叉树B是否为二叉树A的子树</h5><p>任务描述：对于两棵彼此独立的二叉树A和B，请编写算法，检查A中是否存在一颗子树与B树的拓扑结构完全相同。给定两棵二叉树的头结点A和B，请返回一个bool值，代表A中是否存在一棵同构于B的子树。</p>
+<p><strong>思路：</strong>可以先将二叉树A与二叉树B序列化，转化为字符串，若树B是树A的子树的话B序列化后的字符串则是A字符串的子字符串。python中的in语法可以方便做到这一点。</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IdenticalTree</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">chkIdentical</span><span class="params">(self, A, B)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        StringA = self.serialize(A)</span><br><span class="line">        StringB = self.serialize(B)</span><br><span class="line">        <span class="keyword">if</span> StringB <span class="keyword">in</span> StringA:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serialize</span><span class="params">(self, tree)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"#"</span></span><br><span class="line">        serial = str(tree.val)</span><br><span class="line">        serial += self.serialize(tree.left)</span><br><span class="line">        serial += self.serialize(tree.right)</span><br><span class="line">        <span class="keyword">return</span> serial</span><br></pre></td></tr></table></figure>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/06/18/二叉树打印/" itemprop="url">
+                二叉树打印
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-18T22:44:47+08:00" content="2016-06-18">
+            2016-06-18
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/18/二叉树打印/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/18/二叉树打印/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h5 id="按层打印二叉树"><a href="#按层打印二叉树" class="headerlink" title="按层打印二叉树"></a>按层打印二叉树</h5><p>任务描述：有一课二叉树，设计一个算法，按照层次打印这棵二叉树。给定二叉树的根节点root，返回打印结果数组，结果按照每一层一个数组进行储存，数组排列顺序按照从上到下，数组内元素顺序按从左往右。</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreePrinter</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            queue = [root, <span class="string">"#"</span>]</span><br><span class="line">            res = []</span><br><span class="line">            temp = []</span><br><span class="line">            <span class="keyword">while</span> queue:</span><br><span class="line">                cur = queue.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">if</span> cur == <span class="string">"#"</span>:</span><br><span class="line">                    res.append(temp)</span><br><span class="line">                    temp = []</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    temp.append(cur.val)</span><br><span class="line">                    <span class="keyword">if</span> cur.left:</span><br><span class="line">                        queue.append(cur.left)</span><br><span class="line">                    <span class="keyword">if</span> cur.right:</span><br><span class="line">                        queue.append(cur.right)</span><br><span class="line">                    <span class="keyword">if</span> queue[<span class="number">0</span>] == <span class="string">"#"</span>:</span><br><span class="line">                        queue.append(<span class="string">"#"</span>)</span><br><span class="line">            <span class="keyword">return</span> res[:-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/06/18/判断两个字符串是否互为变形词/" itemprop="url">
+                判断两个字符串是否互为变形词
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-18T21:47:27+08:00" content="2016-06-18">
+            2016-06-18
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/18/判断两个字符串是否互为变形词/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/18/判断两个字符串是否互为变形词/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h5 id="任务：判断两个字符串是否互为变形词"><a href="#任务：判断两个字符串是否互为变形词" class="headerlink" title="任务：判断两个字符串是否互为变形词"></a>任务：判断两个字符串是否互为变形词</h5><p>任务描述：对于两个字符串A和B，如果A和B中出现的字符种类相同且每种字符出现的次数相同，则A和B互为变形词。设计一个算法，检查两个给定字符串是否互为变形词。</p>
+<blockquote>
+<p>输入：”abc”, 3, “bca”, 3<br>返回： true</p>
+</blockquote>
+<p><strong>思路：</strong>利用python内建字典数据结构给字符串A和B分别建立自己的空字典，分别遍历他们的字符，用字典的key保存出现过的字符，用字典对应的value保存该字符出现的次数。若A，B分别遍历完后得到的字典相同，则A和B互为变形词。</p>
+<h5 id="python实现"><a href="#python实现" class="headerlink" title="python实现"></a>python实现</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Transform</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">chkTransform</span><span class="params">(self, A, lena, B, lenb)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> lena != lenb:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        dicA = self.counter(A, lena)</span><br><span class="line">        dicB = self.counter(B, lenb)</span><br><span class="line">        <span class="keyword">if</span> dicA != dicB:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">(self, A, lena)</span>:</span></span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> A:</span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> dic:</span><br><span class="line">                dic[i] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> dic</span><br></pre></td></tr></table></figure>
+<h5 id="Python内置计数器"><a href="#Python内置计数器" class="headerlink" title="Python内置计数器"></a>Python内置计数器</h5><p>查询资料后发现Python内建模块中有相关计数器的实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c = Counter()</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">"sdfsdfawerxcvwdf"</span>:</span><br><span class="line"><span class="prompt">... </span>    c[i] += <span class="number">1</span></span><br><span class="line">...</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>c</span><br><span class="line">Counter(&#123;<span class="string">'d'</span>: <span class="number">3</span>, <span class="string">'f'</span>: <span class="number">3</span>, <span class="string">'s'</span>: <span class="number">2</span>, <span class="string">'w'</span>: <span class="number">2</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'v'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -842,311 +1105,6 @@ default:
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/04/14/Java入门笔记1-变量和常量/" itemprop="url">
-                (Java入门笔记1)变量和常量
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-04-14T13:43:31+08:00" content="2016-04-14">
-            2016-04-14
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/04/14/Java入门笔记1-变量和常量/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/14/Java入门笔记1-变量和常量/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h5 id="Java-输出Hello-World"><a href="#Java-输出Hello-World" class="headerlink" title="Java 输出Hello World"></a>Java 输出Hello World</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="Java-标识符"><a href="#Java-标识符" class="headerlink" title="Java 标识符"></a>Java 标识符</h5><p>Java标识符是给java程序中变量，类，方法等命名的符号。</p>
-<ul>
-<li>不能以数字开头，可以由字母、数字、下划线（_）、美元符（$）组成</li>
-<li>不能是Java中的关键字和保留字</li>
-<li>标识符严格区分大小写</li>
-</ul>
-<h5 id="Java中的变量"><a href="#Java中的变量" class="headerlink" title="Java中的变量"></a>Java中的变量</h5><p>Java是一门静态强类型语言，里面的变量初始化时必须指定<strong>变量类型</strong></p>
-<h5 id="Java中的数据类型"><a href="#Java中的数据类型" class="headerlink" title="Java中的数据类型"></a>Java中的数据类型</h5><h6 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h6><ul>
-<li>数值型</li>
-<li>字符型</li>
-<li>布尔型</li>
-</ul>
-<h6 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h6><ul>
-<li>类</li>
-<li>接口</li>
-<li>数组</li>
-</ul>
-<h6 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h6><p>在Java中，<strong>基本数据类型变量存的是数据本身</strong>，而<strong>引用类型变量</strong>存的是<strong>保存数据的空间地址</strong>。</p>
-<h5 id="Java中的数据类型转换"><a href="#Java中的数据类型转换" class="headerlink" title="Java中的数据类型转换"></a>Java中的数据类型转换</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> score1=<span class="number">82</span>;</span><br><span class="line"><span class="keyword">double</span> score2=score1;</span><br><span class="line">System.out.println(score2);</span><br></pre></td></tr></table></figure>
-<p>代码中 int 型变量 score1 可以直接为 double 型变量 score2 完成赋值操作，运行结果为： 82.0 </p>
-<p>这就是<strong>自动类型转换</strong></p>
-<p>需要满足条件为</p>
-<ol>
-<li>目标类型与源类型兼容，如double型兼容int型，但是char型不能兼容int型</li>
-<li>目标类型大于源类型，如 double 类型长度为 8 字节， int 类型为 4 字节，因此 double 类型的变量里直接可以存放 int 类型的数据，但反过来就不可以了</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> avg=<span class="number">75.8</span>;</span><br><span class="line"><span class="keyword">int</span> avg2=(<span class="keyword">int</span>)avg1;</span><br><span class="line">System.out.println(avg1);</span><br><span class="line">System.out.println(avg2);</span><br></pre></td></tr></table></figure>
-<p>这就是<strong>强制类型转换</strong>，通过强制类型转换将 75.8 赋值给 int 型变量后，结果为 75，数值上并未进行四舍五入，而是直接将小数位截断。</p>
-<h5 id="Java常量的应用"><a href="#Java常量的应用" class="headerlink" title="Java常量的应用"></a>Java常量的应用</h5><p>常量是指一种特殊的变量，它的值被设定后，在程序的运行过程中不允许被改变。</p>
-<p>语法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> String LOVE = <span class="string">"JAVA"</span>;</span><br></pre></td></tr></table></figure>
-<p>常量名一般用<strong>大写字符</strong></p>
-<h5 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h5><p>单行注释： //<br>多行注释： /<em> [代码块] </em>/<br>文档注释：/<em> </em> [代码块]  */</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/23/Section1-Task05笔记/" itemprop="url">
-                Section1_Task05笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-23T15:13:38+08:00" content="2016-03-23">
-            2016-03-23
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/HTML与CSS/" itemprop="url" rel="index">
-                  <span itemprop="name">HTML与CSS</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/03/23/Section1-Task05笔记/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/23/Section1-Task05笔记/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>任务五在任务二的基础上去进一步调整布局。在完成任务五的过程中学到的新的知识点如下。</p>
-<h5 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h5><p>block：此元素将显示为块级元素，此元素前后会带有换行符</p>
-<p>inline：此元素会被显示为内联元素，元素前后没有换行符</p>
-<p>inline-block：行内块元素，元素显示为块且元素前后没有换行符</p>
-<h5 id="float相关知识巩固"><a href="#float相关知识巩固" class="headerlink" title="float相关知识巩固"></a>float相关知识巩固</h5><p>当一个元素position设置为float属性，此元会影响到它后面的一个元素。一般情况下需对后面的元素进行浮动清除。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/03/23/Section1-Task04笔记/" itemprop="url">
-                Section1_Task04笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-03-23T10:49:15+08:00" content="2016-03-23">
-            2016-03-23
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/HTML与CSS/" itemprop="url" rel="index">
-                  <span itemprop="name">HTML与CSS</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/03/23/Section1-Task04笔记/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/23/Section1-Task04笔记/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>任务四是利用CSS画出一个简单的组合几何图形</p>
-<h6 id="任务目标"><a href="#任务目标" class="headerlink" title="任务目标"></a>任务目标</h6><ul>
-<li>实践HTML/CSS布局方式</li>
-<li>深入了解position等CSS属性</li>
-</ul>
-<h6 id="画四分之一圆"><a href="#画四分之一圆" class="headerlink" title="画四分之一圆"></a>画四分之一圆</h6><p>利用css画出半径为50px的四分之一圆</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#section</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">50px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h6 id="position-属性"><a href="#position-属性" class="headerlink" title="position  属性"></a>position  属性</h6><p>css当中的position一共有四种，分别是</p>
-<ul>
-<li>statics</li>
-<li>relative</li>
-<li>absolute</li>
-<li>fixed</li>
-</ul>
-<p>其中statics为默认属性。当设置position为relative时，再去设置top等距离时，表示的是相对于之前原本位置的偏移量，且此时元素依旧处于标准文档流当中占据一个位置。</p>
-<p>当设置position为absolute时，此时去设置top等距离时，表示的是离距离元素最近的具有relati属性的元素的位置。若不存在具有relative属性的元素时，表示距离html文档左上角的距离，且此时元素脱离标准文档流。</p>
-<p>fixed属性目前还没有用到，只是大概的了解当position为fixed时，元素就固定在浏览器页面的某个位置，不随滑轮滚动。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1185,7 +1143,7 @@ default:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
