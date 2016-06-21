@@ -174,6 +174,272 @@
           
           
             
+              <a class="post-title-link" href="/2016/06/21/双栈实现队列练习题/" itemprop="url">
+                双栈实现队列练习题
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-21T20:17:29+08:00" content="2016-06-21">
+            2016-06-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/21/双栈实现队列练习题/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/双栈实现队列练习题/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><strong>任务描述：</strong>编写一个类，只能用两个栈结构实现队列，支持队列的基本操作（push,pop)。给定一个操作序列ope以及它的长度n,其中元素为正数代表push操作，为0代表pop操作，保证操作序列合法且一定含pop操作，请返回pop的结果序列。</p>
+<blockquote>
+<p>输入：[1,2,3,0,4,0],6<br>返回：[1,2]</p>
+</blockquote>
+<p><strong>思路：</strong>push时正常的将元素push到第一个栈之中，当需要pop的时候，将第一个栈中的元素通通倒入第二个栈之中，此时第二个栈就与开始时第一个栈中元素顺序相反，然后对第二个栈进行pop操作，便实现了队列。</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.push_stack = []</span><br><span class="line">        self.pop_stack = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item)</span>:</span></span><br><span class="line">        self.push_stack.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.push_stack[::-<span class="number">1</span>]:</span><br><span class="line">            self.pop_stack.append(i)</span><br><span class="line">        output = self.pop_stack.pop()</span><br><span class="line">        self.push_stack = self.pop_stack[::-<span class="number">1</span>]</span><br><span class="line">        self.pop_stack = []</span><br><span class="line">        <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoStack</span><span class="params">(self, ope, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> ope:</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">0</span>:</span><br><span class="line">                self.push(i)</span><br><span class="line">            <span class="keyword">elif</span> i == <span class="number">0</span>:</span><br><span class="line">                res.append(self.pop())</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/06/21/可查询最值的栈练习题/" itemprop="url">
+                可查询最值的栈练习题
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-21T19:57:42+08:00" content="2016-06-21">
+            2016-06-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/21/可查询最值的栈练习题/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/可查询最值的栈练习题/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><strong>任务描述：</strong>定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。</p>
+<p><strong>思路：</strong>通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.stack = []</span><br><span class="line">        self.min_stack = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        self.stack.append(node)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.min_stack:</span><br><span class="line">            self.min_stack.append(node)</span><br><span class="line">        <span class="keyword">elif</span> node &lt;= self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.append(node)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        out = self.stack.pop()</span><br><span class="line">        <span class="keyword">if</span> out == self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.pop()</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">return</span> self.stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">min</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">return</span> self.min_stack[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/06/21/最长无重复子字符串/" itemprop="url">
+                最长无重复子字符串
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-06-21T19:29:52+08:00" content="2016-06-21">
+            2016-06-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/06/21/最长无重复子字符串/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/最长无重复子字符串/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h5 id="最长无重复子字符串练习题"><a href="#最长无重复子字符串练习题" class="headerlink" title="最长无重复子字符串练习题"></a>最长无重复子字符串练习题</h5><p>任务描述：对于一个字符串，设计一个算法，找到字符串的最长无重复子串长度</p>
+<blockquote>
+<p>输入：”aabcb”, 5<br>返回：3</p>
+</blockquote>
+<p><strong>思路：</strong>先从第一个字符开始往后遍历，当遇到第一个重复字符时停止遍历，记录此时字符串长度。然后从第二个字符开始往后遍历，遇到重复字符时停止遍历，记录此时字符串长度，一直到最后从最后一个字符遍历。返回所有记录长度中最大的一个值。</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DistinctSubstring</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span><span class="params">(self, A, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        max_len = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            tem_str = <span class="string">""</span></span><br><span class="line">            tem_len = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">                <span class="keyword">if</span> A[j] <span class="keyword">not</span> <span class="keyword">in</span> tem_str:</span><br><span class="line">                    tem_str += A[j]</span><br><span class="line">                    tem_len += <span class="number">1</span></span><br><span class="line">                    max_len = max(max_len, tem_len)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    max_len = max(max_len, tem_len)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> max_len</span><br></pre></td></tr></table></figure></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/06/18/判断B是否为A的子树/" itemprop="url">
                 判断B是否为A的子树
               </a>
@@ -788,328 +1054,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/04/16/Java入门笔记3-用户输入与数组/" itemprop="url">
-                (Java入门笔记3)用户输入与数组
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-04-16T15:02:38+08:00" content="2016-04-16">
-            2016-04-16
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/04/16/Java入门笔记3-用户输入与数组/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/Java入门笔记3-用户输入与数组/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h5 id="接受用户输入"><a href="#接受用户输入" class="headerlink" title="接受用户输入"></a>接受用户输入</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.uti.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in); <span class="comment">//创建Scanner对象</span></span><br><span class="line">		System.out.println(<span class="string">"请输入："</span>);</span><br><span class="line">		<span class="keyword">int</span> num = input.nextInt(); <span class="comment">//获取用户输入的整数，并保存在num变量</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><p>Java 中数组操作需要四个步骤：</p>
-<p>1.声明数组</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] scores;  <span class="comment">//声明一个类型为整型的数组</span></span><br><span class="line"><span class="keyword">double</span> height[]; <span class="comment">//声明一个类型为浮点型的数组</span></span><br><span class="line">String[] name; <span class="comment">//声明一个类型为字符串的数组</span></span><br></pre></td></tr></table></figure>
-<p>2.分配空间</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scores = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]; <span class="comment">//长度为5的整数型数组</span></span><br></pre></td></tr></table></figure>
-<p>或者将两个步骤合并，在声明数组的同时为他们分配空间</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] scores = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
-<p>3.赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scores[<span class="number">0</span>] = <span class="number">89</span>;</span><br><span class="line">scores[<span class="number">1</span>] = <span class="number">79</span>;</span><br></pre></td></tr></table></figure>
-<p>通过下标直接访问</p>
-<p>直接将三步合并操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] scores = &#123;<span class="number">78</span>, <span class="number">91</span>, <span class="number">84</span>, <span class="number">68</span>&#125;;</span><br></pre></td></tr></table></figure></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/04/15/Flask框架笔记1-使用-property/" itemprop="url">
-                (Flask框架学习笔记1)使用@property
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-04-15T19:28:50+08:00" content="2016-04-15">
-            2016-04-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Python/" itemprop="url" rel="index">
-                  <span itemprop="name">Python</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/04/15/Flask框架笔记1-使用-property/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Flask框架笔记1-使用-property/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>以下笔记部分参考<a href="http://www.liaoxuefeng.com" target="_blank" rel="external">廖雪峰的博客</a></p>
-<p>Python的内置装饰器@property负责把一个方法变成属性调用的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="decorator">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._score</span><br><span class="line"></span><br><span class="line"><span class="decorator">    @score.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(value, int):</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'score must be an integer!'</span>)</span><br><span class="line">        <span class="keyword">if</span> value &lt; <span class="number">0</span> <span class="keyword">or</span> value &gt; <span class="number">100</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'score must between 0 ~ 100!'</span>)</span><br><span class="line">        self._score = value</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s = Student()</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s.score = <span class="number">60</span> <span class="comment"># OK，实际转化为s.set_score(60)</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s.score <span class="comment"># OK，实际转化为s.get_score()</span></span><br><span class="line"><span class="number">60</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s.score = <span class="number">9999</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">ValueError: score must between <span class="number">0</span> ~ <span class="number">100</span>!</span><br></pre></td></tr></table></figure>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/" itemprop="url">
-                (Java入门笔记2)常用运算符与流程控制语句
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2016-04-15T13:22:44+08:00" content="2016-04-15">
-            2016-04-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Java入门笔记2-常用运算符与流程控制语句/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h5 id="Java中的自加符号"><a href="#Java中的自加符号" class="headerlink" title="Java中的自加符号"></a>Java中的自加符号</h5><p>例1：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b = ++a; <span class="comment">//先让a执行自加，然后赋值给b</span></span><br><span class="line">System.out.println(<span class="string">"a :"</span> + a);</span><br><span class="line">System.out.println(<span class="string">"b :"</span> + b);</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code>a : 6
-b : 6
-</code></pre><p>例2：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b = a++; <span class="comment">//先将a的值赋给b，然后再执行自增</span></span><br><span class="line">System.out.println(<span class="string">"a : "</span> + a);</span><br><span class="line">System.out.println(<span class="string">"b : "</span> + b);</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code>a : 6 
-b : 5
-</code></pre><h5 id="Java中的逻辑运算符"><a href="#Java中的逻辑运算符" class="headerlink" title="Java中的逻辑运算符"></a>Java中的逻辑运算符</h5><ul>
-<li>与：&amp;&amp;</li>
-<li>或：||</li>
-<li>非：！</li>
-<li>异或：^</li>
-</ul>
-<h5 id="Java中的条件运算符"><a href="#Java中的条件运算符" class="headerlink" title="Java中的条件运算符"></a>Java中的条件运算符</h5><p>语法形式：布尔表达式 ？ 表达式1：表达式2</p>
-<p>代码实例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = (<span class="number">8</span>&gt;<span class="number">5</span>) ?  <span class="string">"8大于5"</span>：<span class="string">"8不大于5"</span>;</span><br><span class="line">System.out.println( str );</span><br></pre></td></tr></table></figure>
-<h5 id="Java条件语句之if…else"><a href="#Java条件语句之if…else" class="headerlink" title="Java条件语句之if…else"></a>Java条件语句之if…else</h5><p>语法：</p>
-<pre><code>if (条件的布尔表达式) {
-    代码块1
-}else {
-    代码块2
-}
-</code></pre><h5 id="Java条件语句之switch"><a href="#Java条件语句之switch" class="headerlink" title="Java条件语句之switch"></a>Java条件语句之switch</h5><p>语法：</p>
-<pre><code>switch (表达式) {
-case 值1:
-    代码块1
-    break;
-case 值2:
-    代码块2
-    break;
-case 值3:
-    代码块3
-    break;
-default:
-    默认执行代码
-}
-</code></pre><h5 id="Java循环语句"><a href="#Java循环语句" class="headerlink" title="Java循环语句"></a>Java循环语句</h5><p>while 循环：</p>
-<pre><code>while(判断条件) {
-    循环操作
-}
-</code></pre><p>do…while :</p>
-<pre><code>do {
-    循环操作
-} while (判断条件);
-</code></pre><p>与while循环不同的是先执行循环操作，然后判断条件是否成立</p>
-<h5 id="Java循环语句-for"><a href="#Java循环语句-for" class="headerlink" title="Java循环语句 for"></a>Java循环语句 for</h5><p>语法：</p>
-<pre><code>for (循环初始化； 循环条件； 循环变量变化） {
-    循环操作
-}
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
   </nav>
 
  </div>
@@ -1143,7 +1092,7 @@ default:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

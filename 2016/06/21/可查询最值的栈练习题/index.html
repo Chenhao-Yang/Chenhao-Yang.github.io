@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Java,学习笔记," />
+  <meta name="keywords" content="Python,数据结构与算法," />
 
 
 
@@ -39,34 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Java中的自加符号例1：
-1234int b = 5;int b = ++a; //先让a执行自加，然后赋值给bSystem.out.println(&quot;a :&quot; + a);System.out.println(&quot;b :&quot; + b);
-运行结果：
-a : 6
-b : 6
-例2：
-1234int a = 5;int b = a++; //先将a的值赋给b，然后再执行自增System.out.prin">
+<meta name="description" content="任务描述：定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。
+思路：通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop
+Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(Java入门笔记2)常用运算符与流程控制语句">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/index.html">
+<meta property="og:title" content="可查询最值的栈练习题">
+<meta property="og:url" content="http://yoursite.com/2016/06/21/可查询最值的栈练习题/index.html">
 <meta property="og:site_name" content="valar morghulis">
-<meta property="og:description" content="Java中的自加符号例1：
-1234int b = 5;int b = ++a; //先让a执行自加，然后赋值给bSystem.out.println(&quot;a :&quot; + a);System.out.println(&quot;b :&quot; + b);
-运行结果：
-a : 6
-b : 6
-例2：
-1234int a = 5;int b = a++; //先将a的值赋给b，然后再执行自增System.out.prin">
-<meta property="og:updated_time" content="2016-04-15T05:25:03.624Z">
+<meta property="og:description" content="任务描述：定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。
+思路：通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop
+Python">
+<meta property="og:updated_time" content="2016-06-21T12:12:33.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(Java入门笔记2)常用运算符与流程控制语句">
-<meta name="twitter:description" content="Java中的自加符号例1：
-1234int b = 5;int b = ++a; //先让a执行自加，然后赋值给bSystem.out.println(&quot;a :&quot; + a);System.out.println(&quot;b :&quot; + b);
-运行结果：
-a : 6
-b : 6
-例2：
-1234int a = 5;int b = a++; //先将a的值赋给b，然后再执行自增System.out.prin">
+<meta name="twitter:title" content="可查询最值的栈练习题">
+<meta name="twitter:description" content="任务描述：定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。
+思路：通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop
+Python">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -76,7 +64,7 @@ b : 6
   };
 </script>
 
-  <title> (Java入门笔记2)常用运算符与流程控制语句 | valar morghulis </title>
+  <title> 可查询最值的栈练习题 | valar morghulis </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -191,7 +179,7 @@ b : 6
           
           
             
-              (Java入门笔记2)常用运算符与流程控制语句
+              可查询最值的栈练习题
             
           
         </h1>
@@ -200,8 +188,8 @@ b : 6
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-04-15T13:22:44+08:00" content="2016-04-15">
-            2016-04-15
+          <time itemprop="dateCreated" datetime="2016-06-21T19:57:42+08:00" content="2016-06-21">
+            2016-06-21
           </time>
         </span>
 
@@ -210,8 +198,8 @@ b : 6
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
+                <a href="/categories/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
                 </a>
               </span>
 
@@ -226,8 +214,8 @@ b : 6
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Java入门笔记2-常用运算符与流程控制语句/" itemprop="commentsCount"></span>
+              <a href="/2016/06/21/可查询最值的栈练习题/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/可查询最值的栈练习题/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -241,59 +229,11 @@ b : 6
       
 
       
-        <span itemprop="articleBody"><h5 id="Java中的自加符号"><a href="#Java中的自加符号" class="headerlink" title="Java中的自加符号"></a>Java中的自加符号</h5><p>例1：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b = ++a; <span class="comment">//先让a执行自加，然后赋值给b</span></span><br><span class="line">System.out.println(<span class="string">"a :"</span> + a);</span><br><span class="line">System.out.println(<span class="string">"b :"</span> + b);</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code>a : 6
-b : 6
-</code></pre><p>例2：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b = a++; <span class="comment">//先将a的值赋给b，然后再执行自增</span></span><br><span class="line">System.out.println(<span class="string">"a : "</span> + a);</span><br><span class="line">System.out.println(<span class="string">"b : "</span> + b);</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<pre><code>a : 6 
-b : 5
-</code></pre><h5 id="Java中的逻辑运算符"><a href="#Java中的逻辑运算符" class="headerlink" title="Java中的逻辑运算符"></a>Java中的逻辑运算符</h5><ul>
-<li>与：&amp;&amp;</li>
-<li>或：||</li>
-<li>非：！</li>
-<li>异或：^</li>
-</ul>
-<h5 id="Java中的条件运算符"><a href="#Java中的条件运算符" class="headerlink" title="Java中的条件运算符"></a>Java中的条件运算符</h5><p>语法形式：布尔表达式 ？ 表达式1：表达式2</p>
-<p>代码实例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = (<span class="number">8</span>&gt;<span class="number">5</span>) ?  <span class="string">"8大于5"</span>：<span class="string">"8不大于5"</span>;</span><br><span class="line">System.out.println( str );</span><br></pre></td></tr></table></figure>
-<h5 id="Java条件语句之if…else"><a href="#Java条件语句之if…else" class="headerlink" title="Java条件语句之if…else"></a>Java条件语句之if…else</h5><p>语法：</p>
-<pre><code>if (条件的布尔表达式) {
-    代码块1
-}else {
-    代码块2
-}
-</code></pre><h5 id="Java条件语句之switch"><a href="#Java条件语句之switch" class="headerlink" title="Java条件语句之switch"></a>Java条件语句之switch</h5><p>语法：</p>
-<pre><code>switch (表达式) {
-case 值1:
-    代码块1
-    break;
-case 值2:
-    代码块2
-    break;
-case 值3:
-    代码块3
-    break;
-default:
-    默认执行代码
-}
-</code></pre><h5 id="Java循环语句"><a href="#Java循环语句" class="headerlink" title="Java循环语句"></a>Java循环语句</h5><p>while 循环：</p>
-<pre><code>while(判断条件) {
-    循环操作
-}
-</code></pre><p>do…while :</p>
-<pre><code>do {
-    循环操作
-} while (判断条件);
-</code></pre><p>与while循环不同的是先执行循环操作，然后判断条件是否成立</p>
-<h5 id="Java循环语句-for"><a href="#Java循环语句-for" class="headerlink" title="Java循环语句 for"></a>Java循环语句 for</h5><p>语法：</p>
-<pre><code>for (循环初始化； 循环条件； 循环变量变化） {
-    循环操作
-}
-</code></pre></span>
+        <span itemprop="articleBody"><p><strong>任务描述：</strong>定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。</p>
+<p><strong>思路：</strong>通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.stack = []</span><br><span class="line">        self.min_stack = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        self.stack.append(node)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.min_stack:</span><br><span class="line">            self.min_stack.append(node)</span><br><span class="line">        <span class="keyword">elif</span> node &lt;= self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.append(node)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        out = self.stack.pop()</span><br><span class="line">        <span class="keyword">if</span> out == self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.pop()</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">return</span> self.stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">min</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">return</span> self.min_stack[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+</span>
       
     </div>
 
@@ -301,9 +241,9 @@ default:
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag">#Java</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+            <a href="/tags/数据结构与算法/" rel="tag">#数据结构与算法</a>
           
         </div>
       
@@ -312,13 +252,13 @@ default:
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/15/Flask框架笔记1-使用-property/" rel="prev">(Flask框架学习笔记1)使用@property</a>
+              <a href="/2016/06/21/双栈实现队列练习题/" rel="prev">双栈实现队列练习题</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/14/Java入门笔记1-变量和常量/" rel="next">(Java入门笔记1)变量和常量</a>
+              <a href="/2016/06/21/最长无重复子字符串/" rel="next">最长无重复子字符串</a>
             
           </div>
         </div>
@@ -343,8 +283,8 @@ default:
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2016/04/15/Java入门笔记2-常用运算符与流程控制语句/"
-                   data-title="(Java入门笔记2)常用运算符与流程控制语句" data-url="http://yoursite.com/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/">
+              <div class="ds-thread" data-thread-key="2016/06/21/可查询最值的栈练习题/"
+                   data-title="可查询最值的栈练习题" data-url="http://yoursite.com/2016/06/21/可查询最值的栈练习题/">
               </div>
             
           </div>
@@ -436,7 +376,7 @@ default:
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Java中的自加符号"><span class="nav-number">1.</span> <span class="nav-text">Java中的自加符号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java中的逻辑运算符"><span class="nav-number">2.</span> <span class="nav-text">Java中的逻辑运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java中的条件运算符"><span class="nav-number">3.</span> <span class="nav-text">Java中的条件运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java条件语句之if…else"><span class="nav-number">4.</span> <span class="nav-text">Java条件语句之if…else</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java条件语句之switch"><span class="nav-number">5.</span> <span class="nav-text">Java条件语句之switch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java循环语句"><span class="nav-number">6.</span> <span class="nav-text">Java循环语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Java循环语句-for"><span class="nav-number">7.</span> <span class="nav-text">Java循环语句 for</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
