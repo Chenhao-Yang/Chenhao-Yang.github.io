@@ -251,6 +251,202 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/浏览器跨域问题的几种解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨晨昊">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="valar morghulis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/05/浏览器跨域问题的几种解决方案/" itemprop="url">浏览器跨域问题的几种解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T15:32:52+08:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML与CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML与CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/05/浏览器跨域问题的几种解决方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/05/浏览器跨域问题的几种解决方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>跨域问题出现的原因是由于浏览器的同源限制。</p>
+<blockquote>
+<p>同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。</p>
+<p>一个源的定义: 如果协议，端口（如果指定了一个）和域名对于两个页面是相同的，则两个页面具有相同的源。</p>
+</blockquote>
+<p>通常解决跨域问题的方法包括以下几种</p>
+<ol>
+<li>jsonp</li>
+<li>cors</li>
+<li>降域</li>
+<li>postmessage</li>
+</ol>
+<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><ul>
+<li>首先是利用动态添加script标签，定制src属性来实现跨域</li>
+<li>通过将前端方法作为参数传递到服务器端，然后由服务器端注入参数后再返回，实现服务器端向客户端通信</li>
+<li>由于使用script标签的src属性，因此只支持get方法</li>
+</ul>
+<h4 id="jsonp简单实现"><a href="#jsonp简单实现" class="headerlink" title="jsonp简单实现"></a>jsonp简单实现</h4><p>一个简单的jsonp实现，其实就是拼接url，然后动态的添加一个script元素到头部</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">req</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">  <span class="keyword">var</span> url = req.url + <span class="string">'?callback='</span> + req.callback.name</span><br><span class="line">  script.src = url</span><br><span class="line">  <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用代码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello '</span> + res.data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jsonp(&#123;</span><br><span class="line">  url: <span class="string">""</span>,</span><br><span class="line">  callback: hello</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//服务器端代码</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> urllib = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> port = <span class="number">8080</span></span><br><span class="line"><span class="keyword">var</span> data = &#123;<span class="string">'data'</span>: <span class="string">'world'</span>&#125;</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> params = urllib.parse(req.url, <span class="literal">true</span>)</span><br><span class="line">  <span class="keyword">if</span>(params.query.callback)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(params.query.callback)</span><br><span class="line">    <span class="comment">//jsonp</span></span><br><span class="line">    <span class="keyword">var</span> str = params.query.callback + <span class="string">'('</span> + <span class="built_in">JSON</span>.stringify(data) + <span class="string">')'</span></span><br><span class="line">    res.end(str)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    res.end()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).listen(port, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'jsonp server is on'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面的实现比较简单，有一些不足的地方</p>
+<ol>
+<li>我们传递的回调必须是一个全局方法，要尽量减少全局方法使用</li>
+<li>需要加入一些参数校验，确保接口正常执行</li>
+</ol>
+<h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><blockquote>
+<p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。</p>
+<p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。<br>整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。<br>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+</blockquote>
+<ol>
+<li>浏览器先根据同源策略对前端页面和后台交互地址做匹配，若同源，则直接发送数据请求；若不同源，则发送跨域请求。</li>
+<li>服务器解析程序收到浏览器跨域请求后，根据自身配置返回对应文件头。若未配置过任何允许跨域，则文件头里不包含Access-Control-Allow-origin 字段，若配置过域名，则返回Access-Control-Allow-origin + 对应配置规则里的域名的方式。</li>
+<li>浏览器根据接收到的http文件头里的Access-Control-Allow-origin字段做匹配，若无该字段，说明不允许跨域；若有该字段，则对字段内容和当前域名做对比，如果同源，则说明可以跨域，浏览器发送请求；若不同源，则说明该域名不可跨域，不发送请求</li>
+</ol>
+<h3 id="降域"><a href="#降域" class="headerlink" title="降域"></a>降域</h3><ol>
+<li>把child.a.com和a.com和xxx.child.a.com都可以降域为a.com。因此只能在不同子域名之间实现</li>
+<li>实现的话需要在两个需要进行跨域的网站script都写document.domain = ‘a.com’进行降域</li>
+<li>其中ajax不受降域的影响，得用iframe在页面中引用另一个页面的这种方式</li>
+<li>降域有安全性的问题，如果一个子域名被攻击，多个被降域的域名都会被连带。</li>
+</ol>
+<h3 id="postmessage"><a href="#postmessage" class="headerlink" title="postmessage"></a>postmessage</h3><blockquote>
+<p>HTML5中最酷的新功能之一就是 跨文档消息传输Cross Document Messaging。下一代浏览器都将支持这个功能：Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 。 Facebook已经使用了这个功能，用postMessage支持基于web的实时消息传递。</p>
+</blockquote>
+<p>otherWindow.postMessage(message, targetOrigin);<br>otherWindow: 对接收信息页面的window的引用。可以是页面中iframe的contentWindow属性；window.open的返回值；通过name或下标从window.frames取到的值。<br>message: 所要发送的数据，string类型。<br>targetOrigin: 用于限制otherWindow，”通配符”表示不作限制</p>
+<h5 id="a-com-index-html中的代码"><a href="#a-com-index-html中的代码" class="headerlink" title="a.com/index.html中的代码"></a>a.com/index.html中的代码</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">id</span>=<span class="value">"ifr"</span> <span class="attribute">src</span>=<span class="value">"b.com/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.getElementById(<span class="string">'ifr'</span>);</span><br><span class="line">    <span class="keyword">var</span> targetOrigin = <span class="string">'http://b.com'</span>;  <span class="comment">// 若写成'http://b.com/c/proxy.html'效果一样</span></span><br><span class="line">                                        <span class="comment">// 若写成'http://c.com'就不会执行postMessage了</span></span><br><span class="line">    ifr.contentWindow.postMessage(<span class="string">'I was there!'</span>, targetOrigin);</span><br><span class="line">&#125;;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="b-com-index-html中的代码"><a href="#b-com-index-html中的代码" class="headerlink" title="b.com/index.html中的代码"></a>b.com/index.html中的代码</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 通过origin属性判断消息来源地址</span></span><br><span class="line">        <span class="keyword">if</span> (event.origin == <span class="string">'http://a.com'</span>) &#123;</span><br><span class="line">            alert(event.data);    <span class="comment">// 弹出"I was there!"</span></span><br><span class="line">            alert(event.source);  <span class="comment">// 对a.com、index.html中window对象的引用</span></span><br><span class="line">                                  <span class="comment">// 但由于同源策略，这里event.source不可以访问window对象</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/CSS常见布局以及解决方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1781,159 +1977,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/16/python基础教程笔记（1）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="杨晨昊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="valar morghulis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/16/python基础教程笔记（1）/" itemprop="url">python基础教程笔记（1）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-16T17:40:13+08:00">
-                2016-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/06/16/python基础教程笔记（1）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/16/python基础教程笔记（1）/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"x"</span>:<span class="number">1</span>, <span class="string">"y"</span>:<span class="number">2</span>, <span class="string">"z"</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line">	<span class="keyword">print</span> key, <span class="string">"corresponds to "</span>, value</span><br></pre></td></tr></table></figure>
-<h5 id="并行迭代"><a href="#并行迭代" class="headerlink" title="并行迭代"></a>并行迭代</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">"ych"</span>, <span class="string">"cpp"</span>, <span class="string">"ws"</span>]</span><br><span class="line">ages = [<span class="number">12</span>, <span class="number">14</span>, <span class="number">54</span>]</span><br><span class="line"></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>zip(name, ages)</span><br><span class="line">[(<span class="string">"ych"</span>, <span class="number">12</span>	), (<span class="string">"cpp"</span>, <span class="number">14</span>), (<span class="string">"ws"</span>, <span class="number">54</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name, age <span class="keyword">in</span> zip(names, ages):</span><br><span class="line">    <span class="keyword">print</span> name, <span class="string">"is"</span>, age, <span class="string">"years old"</span></span><br></pre></td></tr></table></figure>
-<h5 id="使用for循环同时迭代索引"><a href="#使用for循环同时迭代索引" class="headerlink" title="使用for循环同时迭代索引"></a>使用for循环同时迭代索引</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, item <span class="keyword">in</span> enumerate(some_list):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"index: "</span>, index, <span class="string">"item: "</span>, item</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1988,7 +2031,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
