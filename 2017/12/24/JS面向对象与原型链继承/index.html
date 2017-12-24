@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python,数据结构与算法," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,22 +79,20 @@
 
 
 
-<meta name="description" content="任务描述：定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。
-思路：通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop
-Python">
+<meta name="description" content="由于最开始是先接触Python的中面向对象，继承的语法以及思路开始的。之后当接触到了JavaScript的的面向对象语法时是觉得有些别捏的。JS本身是不提供class的实现的，而是基于原型链。
+面向对象12345678910function People(name)&amp;#123;    this.name = name&amp;#125;People.prototype.sayName = function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="可查询最值的栈练习题">
-<meta property="og:url" content="http://yoursite.com/2016/06/21/可查询最值的栈练习题/index.html">
+<meta property="og:title" content="JS面向对象与原型链继承">
+<meta property="og:url" content="http://yoursite.com/2017/12/24/JS面向对象与原型链继承/index.html">
 <meta property="og:site_name" content="valar morghulis">
-<meta property="og:description" content="任务描述：定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。
-思路：通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop
-Python">
-<meta property="og:updated_time" content="2016-06-21T12:12:33.606Z">
+<meta property="og:description" content="由于最开始是先接触Python的中面向对象，继承的语法以及思路开始的。之后当接触到了JavaScript的的面向对象语法时是觉得有些别捏的。JS本身是不提供class的实现的，而是基于原型链。
+面向对象12345678910function People(name)&amp;#123;    this.name = name&amp;#125;People.prototype.sayName = function">
+<meta property="og:image" content="http://p16zd0h1i.bkt.clouddn.com/blog/js-class.jpg">
+<meta property="og:updated_time" content="2017-12-24T09:30:38.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="可查询最值的栈练习题">
-<meta name="twitter:description" content="任务描述：定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。
-思路：通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop
-Python">
+<meta name="twitter:title" content="JS面向对象与原型链继承">
+<meta name="twitter:description" content="由于最开始是先接触Python的中面向对象，继承的语法以及思路开始的。之后当接触到了JavaScript的的面向对象语法时是觉得有些别捏的。JS本身是不提供class的实现的，而是基于原型链。
+面向对象12345678910function People(name)&amp;#123;    this.name = name&amp;#125;People.prototype.sayName = function">
 
 
 
@@ -124,13 +122,13 @@ Python">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/21/可查询最值的栈练习题/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/24/JS面向对象与原型链继承/"/>
 
 
 
 
 
-  <title>可查询最值的栈练习题 | valar morghulis</title>
+  <title>JS面向对象与原型链继承 | valar morghulis</title>
   
 
 
@@ -257,7 +255,7 @@ Python">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/21/可查询最值的栈练习题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/24/JS面向对象与原型链继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨晨昊">
@@ -274,7 +272,7 @@ Python">
 
         
         
-          <h1 class="post-title" itemprop="name headline">可查询最值的栈练习题</h1>
+          <h1 class="post-title" itemprop="name headline">JS面向对象与原型链继承</h1>
         
 
         <div class="post-meta">
@@ -286,8 +284,8 @@ Python">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-21T19:57:42+08:00">
-                2016-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-24T15:45:29+08:00">
+                2017-12-24
               </time>
             
 
@@ -309,8 +307,8 @@ Python">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -327,8 +325,8 @@ Python">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/06/21/可查询最值的栈练习题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/可查询最值的栈练习题/" itemprop="commentCount"></span>
+                <a href="/2017/12/24/JS面向对象与原型链继承/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/24/JS面向对象与原型链继承/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -356,10 +354,29 @@ Python">
       
 
       
-        <p><strong>任务描述：</strong>定义栈的数据结构，并在该类型中实现一个能够得到栈最小值，查询时间复杂度为O（1）的min函数。</p>
-<p><strong>思路：</strong>通过同时维护两个栈来实现，第一个栈为普通的栈，正常进栈出栈，第二个栈当push时若元素大于栈顶的元素，则跳过push，若元素小于或等于栈顶的元素，则正常push。当pop时，普通栈正常出栈，若pop出的元素等于第二个栈栈顶元素，则同样pop出第二个栈栈顶元素，否则跳过pop</p>
-<p><strong>Python实现</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.stack = []</span><br><span class="line">        self.min_stack = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        self.stack.append(node)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.min_stack:</span><br><span class="line">            self.min_stack.append(node)</span><br><span class="line">        <span class="keyword">elif</span> node &lt;= self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.append(node)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        out = self.stack.pop()</span><br><span class="line">        <span class="keyword">if</span> out == self.min_stack[-<span class="number">1</span>]:</span><br><span class="line">            self.min_stack.pop()</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">return</span> self.stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">min</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">return</span> self.min_stack[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+        <p>由于最开始是先接触Python的中面向对象，继承的语法以及思路开始的。之后当接触到了JavaScript的的面向对象语法时是觉得有些别捏的。JS本身是不提供class的实现的，而是基于原型链。</p>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">People.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> People(<span class="string">"yangchenhao"</span>)</span><br><span class="line">p.sayName()</span><br></pre></td></tr></table></figure>
+<p>当new一个函数时发生了三件事情</p>
+<ol>
+<li>创建了一个空对象，把空对象的<em>proto</em>属性指向People.prototype</li>
+<li>执行People函数，函数中的this代表这个刚创建的新对象</li>
+<li>返回这个对象</li>
+</ol>
+<p>对于第三步，如果构造函数中有return，分情况讨论。如果return的是基本类型，会忽略不计。如果return的是引用类型，则返回这个引用类型</p>
+<p>原型图</p>
+<p><img src="http://p16zd0h1i.bkt.clouddn.com/blog/js-class.jpg" alt=""></p>
+<p>Tips</p>
+<p>任何函数都有.prototype这个属性，对应的值叫做原型对象，这个原型对象可以由被这个函数new的所有对象共享</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>```javascript<br>function Dialog(target){<br>    this.target = target<br>}</p>
+<p>Dialog.prototype.show = function(){<br>    console.log(this.target + ‘ show’)<br>}</p>
+<p>Dialog.prototype.hide = function(){<br>    console.log(this.target + ‘ hide’)<br>}</p>
+<p>var dialog = new Dialog(‘body’)</p>
+<p>dialog.show()</p>
+<p>function Message(target, name){<br>    Dialog.call(this, target)   // Message构造函数中执行一遍Dialog函数构造过程<br>    this.name = name<br>}</p>
+<p>Message.prototype = Object.create(Dialog.prototype) // 将Message.prototype中<em>proto</em>属性指向Dialog.prototype 相当于继承Dialog中的方法<br>Message.prototype.success = function(){<br>    console.log(this.name, ‘ success’)<br>}</p>
+<p>var msgBox = new Message(‘main’, ‘msg’)<br>msgBox.show()<br>msgBox.success()</p>
+<p>Dialog.call(this, target)的作用是: 执行函数 Dialog(target)，执行的过程中里面遇到 this 换成当前传递的 this</p>
+<p>Object.create(Dialog.prototype)的作用是：创建一个空对象，空对象的<strong>proto</strong>等于 Dialog.prototype</p>
 
       
     </div>
@@ -377,9 +394,7 @@ Python">
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
-          
-            <a href="/tags/数据结构与算法/" rel="tag"># 数据结构与算法</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -392,8 +407,8 @@ Python">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/21/最长无重复子字符串/" rel="next" title="最长无重复子字符串">
-                <i class="fa fa-chevron-left"></i> 最长无重复子字符串
+              <a href="/2017/12/21/前端性能优化/" rel="next" title="前端性能优化">
+                <i class="fa fa-chevron-left"></i> 前端性能优化
               </a>
             
           </div>
@@ -401,10 +416,6 @@ Python">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/21/双栈实现队列练习题/" rel="prev" title="双栈实现队列练习题">
-                双栈实现队列练习题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -435,8 +446,8 @@ Python">
 
   
     <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="2016/06/21/可查询最值的栈练习题/"
-           data-title="可查询最值的栈练习题" data-url="http://yoursite.com/2016/06/21/可查询最值的栈练习题/">
+      <div class="ds-thread" data-thread-key="2017/12/24/JS面向对象与原型链继承/"
+           data-title="JS面向对象与原型链继承" data-url="http://yoursite.com/2017/12/24/JS面向对象与原型链继承/">
       </div>
     </div>
 
@@ -463,8 +474,17 @@ Python">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +564,22 @@ Python">
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
