@@ -251,6 +251,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/18/判断B是否为A的子树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨晨昊">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="valar morghulis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/06/18/判断B是否为A的子树/" itemprop="url">判断B是否为A的子树</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-18T22:59:42+08:00">
+                2016-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/06/18/判断B是否为A的子树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/18/判断B是否为A的子树/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="判断二叉树B是否为二叉树A的子树"><a href="#判断二叉树B是否为二叉树A的子树" class="headerlink" title="判断二叉树B是否为二叉树A的子树"></a>判断二叉树B是否为二叉树A的子树</h5><p>任务描述：对于两棵彼此独立的二叉树A和B，请编写算法，检查A中是否存在一颗子树与B树的拓扑结构完全相同。给定两棵二叉树的头结点A和B，请返回一个bool值，代表A中是否存在一棵同构于B的子树。</p>
+<p><strong>思路：</strong>可以先将二叉树A与二叉树B序列化，转化为字符串，若树B是树A的子树的话B序列化后的字符串则是A字符串的子字符串。python中的in语法可以方便做到这一点。</p>
+<p><strong>Python实现</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IdenticalTree</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">chkIdentical</span><span class="params">(self, A, B)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        StringA = self.serialize(A)</span><br><span class="line">        StringB = self.serialize(B)</span><br><span class="line">        <span class="keyword">if</span> StringB <span class="keyword">in</span> StringA:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serialize</span><span class="params">(self, tree)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"#"</span></span><br><span class="line">        serial = str(tree.val)</span><br><span class="line">        serial += self.serialize(tree.left)</span><br><span class="line">        serial += self.serialize(tree.right)</span><br><span class="line">        <span class="keyword">return</span> serial</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/18/二叉树打印/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1705,191 +1860,6 @@ default:
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/14/Java入门笔记1-变量和常量/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="杨晨昊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="valar morghulis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/14/Java入门笔记1-变量和常量/" itemprop="url">(Java入门笔记1)变量和常量</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-14T13:43:31+08:00">
-                2016-04-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/04/14/Java入门笔记1-变量和常量/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/14/Java入门笔记1-变量和常量/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="Java-输出Hello-World"><a href="#Java-输出Hello-World" class="headerlink" title="Java 输出Hello World"></a>Java 输出Hello World</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="Java-标识符"><a href="#Java-标识符" class="headerlink" title="Java 标识符"></a>Java 标识符</h5><p>Java标识符是给java程序中变量，类，方法等命名的符号。</p>
-<ul>
-<li>不能以数字开头，可以由字母、数字、下划线（_）、美元符（$）组成</li>
-<li>不能是Java中的关键字和保留字</li>
-<li>标识符严格区分大小写</li>
-</ul>
-<h5 id="Java中的变量"><a href="#Java中的变量" class="headerlink" title="Java中的变量"></a>Java中的变量</h5><p>Java是一门静态强类型语言，里面的变量初始化时必须指定<strong>变量类型</strong></p>
-<h5 id="Java中的数据类型"><a href="#Java中的数据类型" class="headerlink" title="Java中的数据类型"></a>Java中的数据类型</h5><h6 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h6><ul>
-<li>数值型</li>
-<li>字符型</li>
-<li>布尔型</li>
-</ul>
-<h6 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h6><ul>
-<li>类</li>
-<li>接口</li>
-<li>数组</li>
-</ul>
-<h6 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h6><p>在Java中，<strong>基本数据类型变量存的是数据本身</strong>，而<strong>引用类型变量</strong>存的是<strong>保存数据的空间地址</strong>。</p>
-<h5 id="Java中的数据类型转换"><a href="#Java中的数据类型转换" class="headerlink" title="Java中的数据类型转换"></a>Java中的数据类型转换</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> score1=<span class="number">82</span>;</span><br><span class="line"><span class="keyword">double</span> score2=score1;</span><br><span class="line">System.out.println(score2);</span><br></pre></td></tr></table></figure>
-<p>代码中 int 型变量 score1 可以直接为 double 型变量 score2 完成赋值操作，运行结果为： 82.0 </p>
-<p>这就是<strong>自动类型转换</strong></p>
-<p>需要满足条件为</p>
-<ol>
-<li>目标类型与源类型兼容，如double型兼容int型，但是char型不能兼容int型</li>
-<li>目标类型大于源类型，如 double 类型长度为 8 字节， int 类型为 4 字节，因此 double 类型的变量里直接可以存放 int 类型的数据，但反过来就不可以了</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> avg=<span class="number">75.8</span>;</span><br><span class="line"><span class="keyword">int</span> avg2=(<span class="keyword">int</span>)avg1;</span><br><span class="line">System.out.println(avg1);</span><br><span class="line">System.out.println(avg2);</span><br></pre></td></tr></table></figure>
-<p>这就是<strong>强制类型转换</strong>，通过强制类型转换将 75.8 赋值给 int 型变量后，结果为 75，数值上并未进行四舍五入，而是直接将小数位截断。</p>
-<h5 id="Java常量的应用"><a href="#Java常量的应用" class="headerlink" title="Java常量的应用"></a>Java常量的应用</h5><p>常量是指一种特殊的变量，它的值被设定后，在程序的运行过程中不允许被改变。</p>
-<p>语法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> String LOVE = <span class="string">"JAVA"</span>;</span><br></pre></td></tr></table></figure>
-<p>常量名一般用<strong>大写字符</strong></p>
-<h5 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h5><p>单行注释： //<br>多行注释： /<em> [代码块] </em>/<br>文档注释：/<em> </em> [代码块]  */</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1944,7 +1914,7 @@ default:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2019,7 +1989,7 @@ default:
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
