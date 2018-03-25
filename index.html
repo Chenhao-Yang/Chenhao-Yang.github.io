@@ -251,6 +251,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/JavaScript-作用域和作用域链学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨晨昊">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="valar morghulis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/25/JavaScript-作用域和作用域链学习/" itemprop="url">JavaScript 作用域和作用域链学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T15:54:52+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/25/JavaScript-作用域和作用域链学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/25/JavaScript-作用域和作用域链学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>作用域<br>一个变量的作用域是程序源代码中定义这个变量的区域。<br>而在ES5中只分为全局作用域和函数作用域，也就是说for,if,while等语句是不会创建作用域的。ES6(let,const)除外。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//全局作用域</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//局部作用域</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">456</span>;                            </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>声明提前<br>JavaScript函数里声明的所有变量（但不涉及赋值）都被“提升”至函数体的顶部，在代码开始运行之前。这个特性被称为声明提前。</p>
+<pre><code>var a = &quot;g&quot;;
+function f() {
+  console.log(a); //输出undefined
+  var a = &quot;l&quot;;
+  console.log(a); //输出&quot;l&quot;
+} 
+</code></pre><p>由于函数作用域的特性，局部变量在整个函数体始终是有定义的，也就是说，函数体的局部变量覆盖了同名全局变量。在函数体内，变量a被“提前”了，提前至函数体的顶部，所以第一次输出的是undefined，那时候还没赋值，但代码执行到var语句时候，局部变量才会被赋值。因此第二次输出则是“l”。此代码过程如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a = <span class="string">"g"</span>;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> a; </span><br><span class="line">     <span class="built_in">console</span>.log(a); <span class="comment">//输出undefined</span></span><br><span class="line">     a = <span class="string">"l"</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(a); <span class="comment">//输出"l"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因此一些程序员特意将变量声明放在函数体的顶部，而不是将声明靠近放在使用变量之处。</p>
+<p>作用域链<br>先看一段简单代码，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"wythe"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">//wythe</span></span><br><span class="line">    <span class="keyword">var</span> firend = <span class="string">"zero"</span>;</span><br><span class="line">&#125;</span><br><span class="line">one();</span><br><span class="line"><span class="built_in">console</span>.log(firend); <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<p>看到代码可知，name是在全局作用域中声明的全局变量，而firend则是在函数作用域中声明的局部变量。在执行时候你会发现函数作用域能够访问到在全局作用域中name这个变量，而全局作用域却不能访问到函数作用域的friend的变量，原因是作用域链!<br>作用域链的规则：<br>外部不能访问内部变量，内部可以访问外部变量<br>为什么会有这样规则？因为是执行环境所规定的。</p>
+<p>执行环境定义了变量或函数有权访问其他数据，决定了它们的行为。每个执行环境都有一个与之关联的变量对象(variable object),环境中定义的所有变量和函数都保存在这个对象中。<br>全局执行环境是最外围的一个执行环境。在Web浏览器中，全局执行环境被认为是window对象。某个执行环境中所有所有代码执行完毕后，该环境被销毁，保存在其中的所有的变量和函数定义也随之销毁。</p>
+<p>补充说明：需要了解一些概念，变量对象(Variable Object)、活动对象(Activation Object)、函数的属性[[scope]].</p>
+<p>变量对象指的是变量对象(缩写为VO)是一个与执行上下文相关的特殊对象，它存储着在上下文中声明的内容有：变量 (var, 变量声明)、函数声明和函数的形参。</p>
+<p>执行上下文(执行环境)：每次当控制器转到ECMAScript可执行代码的时候，即会进入到一个执行上下文。执行上下文(简称-EC)是ECMA-262标准里的一个抽象概念，用于同可执行代码(executable code)概念进行区分。<br>活动对象指的是由函数的运行期上下文(代码执行前)创建，在运行时可变，初始时只有 arguments 属性，通过变量的初始化，包含了局部变量、命名参数、 this 等。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/JS中关于if-xx-和-a-b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1944,163 +2114,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/21/最长无重复子字符串/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="杨晨昊">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="valar morghulis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/21/最长无重复子字符串/" itemprop="url">最长无重复子字符串</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-21T19:29:52+08:00">
-                2016-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/06/21/最长无重复子字符串/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/最长无重复子字符串/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="最长无重复子字符串练习题"><a href="#最长无重复子字符串练习题" class="headerlink" title="最长无重复子字符串练习题"></a>最长无重复子字符串练习题</h5><p>任务描述：对于一个字符串，设计一个算法，找到字符串的最长无重复子串长度</p>
-<blockquote>
-<p>输入：”aabcb”, 5<br>返回：3</p>
-</blockquote>
-<p><strong>思路：</strong>先从第一个字符开始往后遍历，当遇到第一个重复字符时停止遍历，记录此时字符串长度。然后从第二个字符开始往后遍历，遇到重复字符时停止遍历，记录此时字符串长度，一直到最后从最后一个字符遍历。返回所有记录长度中最大的一个值。</p>
-<p><strong>Python实现</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DistinctSubstring</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span><span class="params">(self, A, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        max_len = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            tem_str = <span class="string">""</span></span><br><span class="line">            tem_len = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, n):</span><br><span class="line">                <span class="keyword">if</span> A[j] <span class="keyword">not</span> <span class="keyword">in</span> tem_str:</span><br><span class="line">                    tem_str += A[j]</span><br><span class="line">                    tem_len += <span class="number">1</span></span><br><span class="line">                    max_len = max(max_len, tem_len)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    max_len = max(max_len, tem_len)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> max_len</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2155,7 +2168,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

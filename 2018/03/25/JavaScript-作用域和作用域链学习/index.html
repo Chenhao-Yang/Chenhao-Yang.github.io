@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python,学习笔记,爬虫," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,25 +79,19 @@
 
 
 
-<meta name="description" content="最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。
-导入模块import xlwt
-新建一个excel文件myfile = xlwt.Workbook()
-新建一个sheetsheet = myfile.add_sheet(&amp;quot;sheet">
+<meta name="description" content="作用域一个变量的作用域是程序源代码中定义这个变量的区域。而在ES5中只分为全局作用域和函数作用域，也就是说for,if,while等语句是不会创建作用域的。ES6(let,const)除外。
+123456 //全局作用域var a = 123;function aa () &amp;#123;    //局部作用域    var b = 456;                            &amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用Python将数据写入excel文件">
-<meta property="og:url" content="http://yoursite.com/2016/04/28/利用Python将数据写入excel文件/index.html">
+<meta property="og:title" content="JavaScript 作用域和作用域链学习">
+<meta property="og:url" content="http://yoursite.com/2018/03/25/JavaScript-作用域和作用域链学习/index.html">
 <meta property="og:site_name" content="valar morghulis">
-<meta property="og:description" content="最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。
-导入模块import xlwt
-新建一个excel文件myfile = xlwt.Workbook()
-新建一个sheetsheet = myfile.add_sheet(&amp;quot;sheet">
-<meta property="og:updated_time" content="2016-04-28T02:18:21.833Z">
+<meta property="og:description" content="作用域一个变量的作用域是程序源代码中定义这个变量的区域。而在ES5中只分为全局作用域和函数作用域，也就是说for,if,while等语句是不会创建作用域的。ES6(let,const)除外。
+123456 //全局作用域var a = 123;function aa () &amp;#123;    //局部作用域    var b = 456;                            &amp;#">
+<meta property="og:updated_time" content="2018-03-25T07:56:53.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用Python将数据写入excel文件">
-<meta name="twitter:description" content="最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。
-导入模块import xlwt
-新建一个excel文件myfile = xlwt.Workbook()
-新建一个sheetsheet = myfile.add_sheet(&amp;quot;sheet">
+<meta name="twitter:title" content="JavaScript 作用域和作用域链学习">
+<meta name="twitter:description" content="作用域一个变量的作用域是程序源代码中定义这个变量的区域。而在ES5中只分为全局作用域和函数作用域，也就是说for,if,while等语句是不会创建作用域的。ES6(let,const)除外。
+123456 //全局作用域var a = 123;function aa () &amp;#123;    //局部作用域    var b = 456;                            &amp;#">
 
 
 
@@ -127,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/04/28/利用Python将数据写入excel文件/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/25/JavaScript-作用域和作用域链学习/"/>
 
 
 
 
 
-  <title>利用Python将数据写入excel文件 | valar morghulis</title>
+  <title>JavaScript 作用域和作用域链学习 | valar morghulis</title>
   
 
 
@@ -260,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/28/利用Python将数据写入excel文件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/JavaScript-作用域和作用域链学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨晨昊">
@@ -277,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">利用Python将数据写入excel文件</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript 作用域和作用域链学习</h1>
         
 
         <div class="post-meta">
@@ -289,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-28T10:16:34+08:00">
-                2016-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T15:54:52+08:00">
+                2018-03-25
               </time>
             
 
@@ -312,8 +306,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -330,8 +324,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/28/利用Python将数据写入excel文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/28/利用Python将数据写入excel文件/" itemprop="commentCount"></span>
+                <a href="/2018/03/25/JavaScript-作用域和作用域链学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/25/JavaScript-作用域和作用域链学习/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,15 +353,25 @@
       
 
       
-        <p>最近在写一个拉钩网招聘信息的简单爬虫。爬取到了信息之后希望能够储存在excel文件当中方便查看。谷歌了一会后找到了一个相关模块xlwt，用来将python数据写入外部excel文件，记录下用到的基础功能。</p>
-<h5 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h5><pre><code>import xlwt
-</code></pre><h5 id="新建一个excel文件"><a href="#新建一个excel文件" class="headerlink" title="新建一个excel文件"></a>新建一个excel文件</h5><pre><code>myfile = xlwt.Workbook()
-</code></pre><h5 id="新建一个sheet"><a href="#新建一个sheet" class="headerlink" title="新建一个sheet"></a>新建一个sheet</h5><pre><code>sheet = myfile.add_sheet(&quot;sheet1&quot;, cell_overwrite_ok=True)
-</code></pre><p>在myfile文件中新建一个叫”sheet1”的新sheet，后面的cell_overwrite_ok<br>参数表示允许覆盖写入。即sheet1当中加入已经存在内容，会覆盖原来的内容写入。</p>
-<h5 id="往sheet中写入内容"><a href="#往sheet中写入内容" class="headerlink" title="往sheet中写入内容"></a>往sheet中写入内容</h5><pre><code>sheet.write(0, 0, &quot;test&quot;)
-</code></pre><p>表示往第0行第0列写入“test”字符串</p>
-<h5 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h5><pre><code>myfile.save(&quot;filename.xls&quot;)
-</code></pre><p>最后一定记得关闭文件完成写入过程</p>
+        <p>作用域<br>一个变量的作用域是程序源代码中定义这个变量的区域。<br>而在ES5中只分为全局作用域和函数作用域，也就是说for,if,while等语句是不会创建作用域的。ES6(let,const)除外。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//全局作用域</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//局部作用域</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">456</span>;                            </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>声明提前<br>JavaScript函数里声明的所有变量（但不涉及赋值）都被“提升”至函数体的顶部，在代码开始运行之前。这个特性被称为声明提前。</p>
+<pre><code>var a = &quot;g&quot;;
+function f() {
+  console.log(a); //输出undefined
+  var a = &quot;l&quot;;
+  console.log(a); //输出&quot;l&quot;
+} 
+</code></pre><p>由于函数作用域的特性，局部变量在整个函数体始终是有定义的，也就是说，函数体的局部变量覆盖了同名全局变量。在函数体内，变量a被“提前”了，提前至函数体的顶部，所以第一次输出的是undefined，那时候还没赋值，但代码执行到var语句时候，局部变量才会被赋值。因此第二次输出则是“l”。此代码过程如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a = <span class="string">"g"</span>;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> a; </span><br><span class="line">     <span class="built_in">console</span>.log(a); <span class="comment">//输出undefined</span></span><br><span class="line">     a = <span class="string">"l"</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(a); <span class="comment">//输出"l"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因此一些程序员特意将变量声明放在函数体的顶部，而不是将声明靠近放在使用变量之处。</p>
+<p>作用域链<br>先看一段简单代码，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"wythe"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">//wythe</span></span><br><span class="line">    <span class="keyword">var</span> firend = <span class="string">"zero"</span>;</span><br><span class="line">&#125;</span><br><span class="line">one();</span><br><span class="line"><span class="built_in">console</span>.log(firend); <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<p>看到代码可知，name是在全局作用域中声明的全局变量，而firend则是在函数作用域中声明的局部变量。在执行时候你会发现函数作用域能够访问到在全局作用域中name这个变量，而全局作用域却不能访问到函数作用域的friend的变量，原因是作用域链!<br>作用域链的规则：<br>外部不能访问内部变量，内部可以访问外部变量<br>为什么会有这样规则？因为是执行环境所规定的。</p>
+<p>执行环境定义了变量或函数有权访问其他数据，决定了它们的行为。每个执行环境都有一个与之关联的变量对象(variable object),环境中定义的所有变量和函数都保存在这个对象中。<br>全局执行环境是最外围的一个执行环境。在Web浏览器中，全局执行环境被认为是window对象。某个执行环境中所有所有代码执行完毕后，该环境被销毁，保存在其中的所有的变量和函数定义也随之销毁。</p>
+<p>补充说明：需要了解一些概念，变量对象(Variable Object)、活动对象(Activation Object)、函数的属性[[scope]].</p>
+<p>变量对象指的是变量对象(缩写为VO)是一个与执行上下文相关的特殊对象，它存储着在上下文中声明的内容有：变量 (var, 变量声明)、函数声明和函数的形参。</p>
+<p>执行上下文(执行环境)：每次当控制器转到ECMAScript可执行代码的时候，即会进入到一个执行上下文。执行上下文(简称-EC)是ECMA-262标准里的一个抽象概念，用于同可执行代码(executable code)概念进行区分。<br>活动对象指的是由函数的运行期上下文(代码执行前)创建，在运行时可变，初始时只有 arguments 属性，通过变量的初始化，包含了局部变量、命名参数、 this 等。</p>
 
       
     </div>
@@ -385,11 +389,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
-          
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
-          
-            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -402,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/26/Requests模块基础用法/" rel="next" title="Requests模块基础用法">
-                <i class="fa fa-chevron-left"></i> Requests模块基础用法
+              <a href="/2018/03/22/JS中关于if-xx-和-a-b/" rel="next" title="JS中关于if(xx)和 a==b">
+                <i class="fa fa-chevron-left"></i> JS中关于if(xx)和 a==b
               </a>
             
           </div>
@@ -411,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/16/python基础教程笔记（1）/" rel="prev" title="python基础教程笔记（1）">
-                python基础教程笔记（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,8 +441,8 @@
 
   
     <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="2016/04/28/利用Python将数据写入excel文件/"
-           data-title="利用Python将数据写入excel文件" data-url="http://yoursite.com/2016/04/28/利用Python将数据写入excel文件/">
+      <div class="ds-thread" data-thread-key="2018/03/25/JavaScript-作用域和作用域链学习/"
+           data-title="JavaScript 作用域和作用域链学习" data-url="http://yoursite.com/2018/03/25/JavaScript-作用域和作用域链学习/">
       </div>
     </div>
 
@@ -473,17 +469,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,22 +550,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#导入模块"><span class="nav-number">1.</span> <span class="nav-text">导入模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建一个excel文件"><span class="nav-number">2.</span> <span class="nav-text">新建一个excel文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建一个sheet"><span class="nav-number">3.</span> <span class="nav-text">新建一个sheet</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#往sheet中写入内容"><span class="nav-number">4.</span> <span class="nav-text">往sheet中写入内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关闭文件"><span class="nav-number">5.</span> <span class="nav-text">关闭文件</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -251,6 +251,209 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨晨昊">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="valar morghulis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/" itemprop="url">(Java入门笔记2)常用运算符与流程控制语句</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-15T13:22:44+08:00">
+                2016-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/04/15/Java入门笔记2-常用运算符与流程控制语句/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Java入门笔记2-常用运算符与流程控制语句/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Java中的自加符号"><a href="#Java中的自加符号" class="headerlink" title="Java中的自加符号"></a>Java中的自加符号</h5><p>例1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b = ++a; <span class="comment">//先让a执行自加，然后赋值给b</span></span><br><span class="line">System.out.println(<span class="string">"a :"</span> + a);</span><br><span class="line">System.out.println(<span class="string">"b :"</span> + b);</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code>a : 6
+b : 6
+</code></pre><p>例2：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> b = a++; <span class="comment">//先将a的值赋给b，然后再执行自增</span></span><br><span class="line">System.out.println(<span class="string">"a : "</span> + a);</span><br><span class="line">System.out.println(<span class="string">"b : "</span> + b);</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code>a : 6 
+b : 5
+</code></pre><h5 id="Java中的逻辑运算符"><a href="#Java中的逻辑运算符" class="headerlink" title="Java中的逻辑运算符"></a>Java中的逻辑运算符</h5><ul>
+<li>与：&amp;&amp;</li>
+<li>或：||</li>
+<li>非：！</li>
+<li>异或：^</li>
+</ul>
+<h5 id="Java中的条件运算符"><a href="#Java中的条件运算符" class="headerlink" title="Java中的条件运算符"></a>Java中的条件运算符</h5><p>语法形式：布尔表达式 ？ 表达式1：表达式2</p>
+<p>代码实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = (<span class="number">8</span>&gt;<span class="number">5</span>) ?  <span class="string">"8大于5"</span>：<span class="string">"8不大于5"</span>;</span><br><span class="line">System.out.println( str );</span><br></pre></td></tr></table></figure>
+<h5 id="Java条件语句之if…else"><a href="#Java条件语句之if…else" class="headerlink" title="Java条件语句之if…else"></a>Java条件语句之if…else</h5><p>语法：</p>
+<pre><code>if (条件的布尔表达式) {
+    代码块1
+}else {
+    代码块2
+}
+</code></pre><h5 id="Java条件语句之switch"><a href="#Java条件语句之switch" class="headerlink" title="Java条件语句之switch"></a>Java条件语句之switch</h5><p>语法：</p>
+<pre><code>switch (表达式) {
+case 值1:
+    代码块1
+    break;
+case 值2:
+    代码块2
+    break;
+case 值3:
+    代码块3
+    break;
+default:
+    默认执行代码
+}
+</code></pre><h5 id="Java循环语句"><a href="#Java循环语句" class="headerlink" title="Java循环语句"></a>Java循环语句</h5><p>while 循环：</p>
+<pre><code>while(判断条件) {
+    循环操作
+}
+</code></pre><p>do…while :</p>
+<pre><code>do {
+    循环操作
+} while (判断条件);
+</code></pre><p>与while循环不同的是先执行循环操作，然后判断条件是否成立</p>
+<h5 id="Java循环语句-for"><a href="#Java循环语句-for" class="headerlink" title="Java循环语句 for"></a>Java循环语句 for</h5><p>语法：</p>
+<pre><code>for (循环初始化； 循环条件； 循环变量变化） {
+    循环操作
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/14/Java入门笔记1-变量和常量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1600,7 +1803,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
